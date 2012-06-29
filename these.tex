@@ -1,0 +1,63 @@
+\documentclass{amu_these}
+
+\begin{document}
+
+%\cfoot{pagenumber}
+%\rhead[]{}
+%\clearscrheadfoot
+\chead{}
+
+% générer la page de titre
+\titlepage
+\input{tex/titlepage.tex}
+
+\newpage
+\thispagestyle{empty}
+\null
+
+\newpage
+\chapter*{Résumé}
+\input{tex/resume}
+\addcontentsline{toc}{chapter}{Résumé}
+
+\newpage
+\chapter*{Abstract}
+\input{tex/abstract}
+\addcontentsline{toc}{chapter}{Abstract}
+
+\newpage
+\tocloftpagestyle{plain}
+\tableofcontents
+
+\newpage
+\tocloftpagestyle{plain}
+\listoffigures
+\addcontentsline{toc}{chapter}{Table des figures}
+
+\newpage
+\chapter*{Introduction}
+\input{tex/intro}
+\addcontentsline{toc}{chapter}{Introduction}
+
+\newpage
+\chapter{Première partie}
+\input{tex/chap1}
+
+\newpage
+\chapter{Deuxième partie}
+\input{tex/chap2}
+
+\newpage
+\chapter{Troisième partie}
+\input{tex/chap3}
+
+\newpage
+\chapter*{Conclusion}
+\input{tex/conc}
+\addcontentsline{toc}{chapter}{Conclusion}
+
+\newpage
+%\printbibliography
+\addcontentsline{toc}{chapter}{Bibliographie}
+
+\end{document}

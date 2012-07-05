@@ -19,12 +19,13 @@
 % extensions compémentaires
 
 \RequirePackage{graphicx} % graphiques et figures
+\RequirePackage{pdfpages} % insertion de pdf
 \RequirePackage{caption} % légendes des figures
-\RequirePackage[ocgcolorlinks]{hyperref} % PDF interactifs
+\RequirePackage[ocgcolorlinks]{hyperref} % pdf interactifs
 \RequirePackage{setspace} % modification de l'interligne
-%\RequirePackage[backend=bibtex, sorting=nyt, style=authoryear]{biblatex} % nouvelle façon de gérer ses bibliographies sous LaTeX
-\RequirePackage[]{natbib} % citations de type auteur-année et numérique
-%\RequirePackage[babel]{csquotes} %
+\RequirePackage[backend=biber, sorting=nyt, style=authoryear]{biblatex} % nouvelle façon de gérer ses bibliographies sous LaTeX
+%\RequirePackage[]{natbib} % citations de type auteur-année et numérique
+%\RequirePackage[babel]{csquotes} % à voir +
 \RequirePackage{scrhack} % redéfinition des macros (KOMA-Script)
 \RequirePackage{scrpage2} % en-tête et les pied de page personnalisé (KOMA-Script)
 
@@ -48,7 +49,7 @@
 \pdfcompresslevel 0 % compression du PDF
 
 \setcounter{secnumdepth}{3} % profondeur des sections numérotées 
-\setcounter{tocdepth}{3} % profondeur des sections dans la table des matières
+\setcounter{tocdepth}{2} % profondeur des sections dans la table des matières
 
 \hypersetup{
     backref=true, % permet d'ajouter des liens dans...
@@ -70,7 +71,7 @@
 
 \pagestyle{scrheadings} % style de page
 \graphicspath{{fig/}} % chemin vers les fichiers images
-%\addbibresource{biblio} % chargement des fichiers de sources bibliographiques
+\addbibresource{biblio} % chargement des fichiers de sources bibliographiques
 
 % commandes personnelles
 

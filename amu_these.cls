@@ -3,11 +3,12 @@
 % Aix-Marseille Université <@univ-amu.fr>
 % Version 0.2 released 01/07/2012
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{amu_these}[2012/01/01 Classe personnelle, V0.1]
+\ProvidesClass{amu_these}[2012/01/01 Classe personnelle, V0.2]
  
 % classe de base (KOMA-Script)
  
-\LoadClass[paper=a4,fontsize=12pt,DIV=12,BCOR=0mm,twoside=off]{scrreprt}
+\LoadClass{scrreprt}
+\KOMAoptions{paper=a4,fontsize=12pt,DIV=12,BCOR=0mm,twoside=off}
 
 % extensions minimales
 
@@ -21,11 +22,12 @@
 \RequirePackage{graphicx} % graphiques et figures
 \RequirePackage{pdfpages} % insertion de pdf
 \RequirePackage{caption} % légendes des figures
-\RequirePackage[ocgcolorlinks]{hyperref} % pdf interactifs
+\RequirePackage{hyperref} % pdf interactifs
 \RequirePackage{setspace} % modification de l'interligne
-\RequirePackage[backend=biber, sorting=nyt, style=authoryear]{biblatex} % nouvelle façon de gérer ses bibliographies sous LaTeX
+\RequirePackage[backend=biber, maxnames=3, minnames=3, sorting=nyt, style=authoryear]{biblatex} % nouvelle façon de gérer ses bibliographies sous LaTeX
 %\RequirePackage[]{natbib} % citations de type auteur-année et numérique
-%\RequirePackage[babel]{csquotes} % à voir +
+\RequirePackage[babel]{csquotes} % à voir +
+\RequirePackage{makeidx} % création d'un index
 \RequirePackage{scrhack} % redéfinition des macros (KOMA-Script)
 \RequirePackage{scrpage2} % en-tête et les pied de page personnalisé (KOMA-Script)
 
@@ -39,9 +41,11 @@
 \floatplacement{figure}{H} % placer une figure là où elle a été appelée
 
 \RequirePackage{amsthm,amssymb,amsbsy,amsmath,amsfonts,amssymb,amscd} % mathematiques
+\RequirePackage[squaren,Gray,cdot]{SIunits} % 
 \PassOptionsToPackage{version=3}{mhchem}
 \RequirePackage{mhchem} % chimie
 
+\RequirePackage{array,multirow,tabularx} % amélioration des tableaux
 
 % paramètres
 
@@ -61,17 +65,18 @@
     citecolor=blue, % couleur des liens des références
     linkcolor= blue, % couleur des liens internes 
     bookmarks=true, % créé des signets pour un lecteur de PDF 
-    bookmarksopen=true, % si les signets sont créés, les afficher complètement
+    bookmarksopen=false, % ne pas déplier les signets par défaut
     pdftitle={Titre}, % informations apparaissant dans...
     pdfauthor={Prénom NOM}, % ...dans les informations du document...
     pdfsubject={Sujet}, % ...sous un lecteur de PDF
     pdfkeywords = {mot clé, keyword, ...}, % Mots-clés
-    linktocpage=true % lien sur le numéro de page pour césure des titres longs
+%    linktocpage=true % lien sur le numéro de page
 }
 
 \pagestyle{scrheadings} % style de page
 \graphicspath{{fig/}} % chemin vers les fichiers images
-\addbibresource{biblio} % chargement des fichiers de sources bibliographiques
+\addbibresource{biblio.bib} % chargement des fichiers de sources bibliographiques
+\makeindex
 
 % commandes personnelles
 
@@ -100,10 +105,25 @@
 
 \renewcommand{\cftdotsep}{\cftnodots} % supprime les pointillés dans la TOC
 
-
-\renewcommand{\captionfont} % légendes
+%LOF
+\renewcommand{\cftfigfont} % entry
              {\usefont{T1}{qhv}{m}{n}\selectfont}
-\renewcommand{\captionlabelfont} % étiquettes des légendes
+\renewcommand{\cftfigpagefont} % numbers
              {\usefont{T1}{qhv}{m}{n}\selectfont}
              
+%LOT
+\renewcommand{\cfttabfont} % entry
+             {\usefont{T1}{qhv}{m}{n}\selectfont}
+\renewcommand{\cfttabpagefont} % numbers
+             {\usefont{T1}{qhv}{m}{n}\selectfont}
+
+\renewcommand{\captionfont} % légendes
+             {\usefont{T1}{cmbr}{m}{n}\selectfont}
+\renewcommand{\captionlabelfont} % étiquettes des légendes
+             {\usefont{T1}{cmbr}{m}{n}\selectfont}
+             
 \addtokomafont{pagenumber}{\small\sffamily} % style de numero de page
+
+%\renewcommand*\indexpagestyle{scrheadings}
+
+\addto\captionsfrench{\renewcommand\listfigurename{Liste des figures}}

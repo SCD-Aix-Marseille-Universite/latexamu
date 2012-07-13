@@ -2,18 +2,14 @@
 
 \begin{document}
 
-%\cfoot{pagenumber}
-%\rhead[]{}
-%\clearscrheadfoot
-\chead{}
 
-% générer la page de titre
-\titlepage
+\chead{}
+\pdfbookmark[0]{Page de titre}{titre}
 \input{tex/titlepage.tex}
 
 \newpage
 \thispagestyle{empty}
-\null
+\input{tex/licence}
 
 \newpage
 \chapter*{Résumé}
@@ -26,13 +22,24 @@
 \addcontentsline{toc}{chapter}{Abstract}
 
 \newpage
+\chapter*{Remerciements}
+\input{tex/remercie}
+
+\newpage
+\pdfbookmark[0]{Table des matières}{tdm}
 \tocloftpagestyle{plain}
 \tableofcontents
 
 \newpage
 \tocloftpagestyle{plain}
 \listoffigures
-\addcontentsline{toc}{chapter}{Table des figures}
+\addcontentsline{toc}{chapter}{Liste des figures}
+\begingroup % permet de garder
+\let\clearpage\relax % la LOF et la LOT sur la même
+\listoftables
+\addcontentsline{toc}{chapter}{Liste des tableaux}
+\endgroup % page
+
 
 \newpage
 \chapter*{Introduction}
@@ -52,12 +59,34 @@
 \input{tex/chap3}
 
 \newpage
+\chapter{Quatrième partie}
+\input{tex/chap4}
+
+\newpage
 \chapter*{Conclusion}
 \input{tex/conc}
 \addcontentsline{toc}{chapter}{Conclusion}
 
+\appendix
+
 \newpage
-\printbibliography
+\phantomsection
 \addcontentsline{toc}{chapter}{Bibliographie}
+\input{tex/biblio}
+
+\newpage
+\phantomsection
+\addcontentsline{toc}{chapter}{Index}
+\printindex
+
+\newpage
+\setcounter{chapter}{0}
+\renewcommand{\thesection}{\Alph{section}}
+\chapter*{ANNEXES}
+\addcontentsline{toc}{chapter}{ANNEXES}
+\newpage
+\input{tex/annexe1}
+\newpage
+\input{tex/annexe2}
 
 \end{document}

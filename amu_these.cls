@@ -1,129 +1,137 @@
 %
-% amu_these v0.1
 % Aix-Marseille Université <@univ-amu.fr>
 % Version 0.2 released 01/07/2012
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{amu_these}[2012/01/01 Classe personnelle, V0.2]
- 
+\ProvidesClass{amu_these}[2012/07/01 Classe personnelle, V0.2]
+
 % classe de base (KOMA-Script)
- 
-\LoadClass{scrreprt}
+\LoadClass{scrreprt}					%% report (KOMA-Script)
 \KOMAoptions{paper=a4,fontsize=12pt,DIV=12,BCOR=0mm,twoside=off}
 
 % extensions minimales
+\RequirePackage[T1]{fontenc}			%% fontes de caractère
+\RequirePackage[utf8]{inputenc}		%% format d'encodage
+\RequirePackage{lmodern}				%% fontes latin modern
+\RequirePackage[french]{babel}		%% typographie française
+\RequirePackage[babel]{csquotes}		%%  guillemet
 
-\RequirePackage[T1]{fontenc} % fontes de caractère
-\RequirePackage[utf8]{inputenc} % format d'encodage
-\RequirePackage{lmodern} % fontes latin modern
-\RequirePackage[french]{babel} % typographie française
+\RequirePackage{lipsum}				%% lorem ipsum (exemple)
 
-% extensions compémentaires
+% extensions complémentaires
+\RequirePackage{scrhack,scrpage2}	%% macros et en-tête/pied de page personnalisés (KOMA-Script)
+\PassOptionsToPackage{
+	backend=biber,
+	maxnames=3,
+	minnames=3,
+	sorting=nyt,
+	citestyle=authoryear,
+	bibstyle=numeric}{biblatex}
+\RequirePackage{biblatex}			%% nouvelle façon de gérer ses bibliographies sous LaTeX
+\RequirePackage{makeidx}				%% création d'index
+\RequirePackage[titles]{tocloft}		%% TOC LOF LOT
+\RequirePackage{endnotes,hyperendnotes}	%% notes de fin
+\RequirePackage{pdfpages}			%% insertion de pdf
+\RequirePackage{graphicx}			%% graphiques et figures
+\RequirePackage{caption}				%% légendes des figures
+\RequirePackage{array,multirow,tabularx}	%% amélioration des tableaux
+\RequirePackage{float}				%% définit les objets flottants tels que les figures et tableaux
+\RequirePackage{setspace}			%% modification de l'interligne
+\RequirePackage{sectsty}				%% style des section
 
-\RequirePackage{graphicx} % graphiques et figures
-\RequirePackage{pdfpages} % insertion de pdf
-\RequirePackage{caption} % légendes des figures
-\RequirePackage{hyperref} % pdf interactifs
-\RequirePackage{setspace} % modification de l'interligne
-\RequirePackage[backend=biber, maxnames=3, minnames=3, sorting=nyt, style=authoryear]{biblatex} % nouvelle façon de gérer ses bibliographies sous LaTeX
-%\RequirePackage[]{natbib} % citations de type auteur-année et numérique
-\RequirePackage[babel]{csquotes} % à voir +
-\RequirePackage{makeidx} % création d'un index
-\RequirePackage{scrhack} % redéfinition des macros (KOMA-Script)
-\RequirePackage{scrpage2} % en-tête et les pied de page personnalisé (KOMA-Script)
-
-\RequirePackage{lipsum} % Lorem ipsum pour l'exemple
-
-\RequirePackage[titles]{tocloft} % TOC+
-\RequirePackage{sectsty} % style section+
-\allsectionsfont{\usefont{T1}{qhv}{b}{n}} % +
-%\RequirePackage{fancyhdr} % en-tête et les pied de page personnalisé
-\RequirePackage{float} % définit les objets flottants tels que les figures et tableaux
-\floatplacement{figure}{H} % placer une figure là où elle a été appelée
-
-\RequirePackage{amsthm,amssymb,amsbsy,amsmath,amsfonts,amssymb,amscd} % mathematiques
-\RequirePackage[squaren,Gray,cdot]{SIunits} % 
+\RequirePackage{amsthm,amssymb,amsbsy,amsmath,amsfonts,amscd} %% mathématiques
+\RequirePackage[squaren,Gray,cdot]{SIunits} %% unités du système international
 \PassOptionsToPackage{version=3}{mhchem}
-\RequirePackage{mhchem} % chimie
+\RequirePackage{mhchem}				%% chimie
 
-\RequirePackage{array,multirow,tabularx} % amélioration des tableaux
+\RequirePackage{hyperref}			%% pdf interactifs (charger ce Package en dernier)
 
 % paramètres
+\pagestyle{scrheadings}				%% style de page
+\addtokomafont{pagenumber}{\small\sffamily}	%% style de numero de page
 
-\pdfobjcompresslevel 0 % compression des objets
-\pdfcompresslevel 0 % compression du PDF
+\setcounter{secnumdepth}{3}			%% profondeur des sections numérotées 
+\setcounter{tocdepth}{2}				%% profondeur des sections dans la table des matières
 
-\setcounter{secnumdepth}{3} % profondeur des sections numérotées 
-\setcounter{tocdepth}{2} % profondeur des sections dans la table des matières
+\graphicspath{{fig/}}				%% chemin vers fichiers images
+\floatplacement{figure}{H}			%% placer une figure là où elle a été appelée
+\addbibresource{biblio.bib}			%% fichiers sources bibliographiques
+\makeindex							%% index
+
+\pdfobjcompresslevel 0				%% compression des objets
+\pdfcompresslevel 0					%% compression du PDF
 
 \hypersetup{
-    backref=true, % permet d'ajouter des liens dans...
-    pagebackref=true, % ...les bibliographies 
-    hyperindex=true, % ajoute des liens dans les index.
-    colorlinks=true, % colorise les liens 
-    breaklinks=true, % permet le retour à la ligne dans les liens trop longs 
-    urlcolor= blue, % couleur des hyperliens
-    citecolor=blue, % couleur des liens des références
-    linkcolor= blue, % couleur des liens internes 
-    bookmarks=true, % créé des signets pour un lecteur de PDF 
-    bookmarksopen=false, % ne pas déplier les signets par défaut
-    pdftitle={Titre}, % informations apparaissant dans...
-    pdfauthor={Prénom NOM}, % ...dans les informations du document...
-    pdfsubject={Sujet}, % ...sous un lecteur de PDF
-    pdfkeywords = {mot clé, keyword, ...}, % Mots-clés
-%    linktocpage=true % lien sur le numéro de page
+	backref=true,					%% ajout de liens
+	pagebackref=true,				%% dans bibliographie
+	hyperindex=true,					%% dans index
+	colorlinks=true,					%% colorise liens
+	breaklinks=true,					%% retour à la ligne (si lien trop long)
+	urlcolor= blue,					%% couleur hyperliens
+    citecolor=blue,					%% couleur liens bibliographie
+	linkcolor= blue,					%% couleur liens internes
+	bookmarks=true,					%% signets Acrobat
+    bookmarksopen=false,				%% signets repliés par défaut
+    linktocpage=false,				%% lien numéro de page dans TOC
+	%% métadonnées :
+	pdftitle={Titre},
+	pdfauthor={Prénom NOM},
+	pdfsubject={Sujet},
+	%% mots-clés :
+	pdfkeywords = {mot clé, keyword, ...},  
 }
 
-\pagestyle{scrheadings} % style de page
-\graphicspath{{fig/}} % chemin vers les fichiers images
-\addbibresource{biblio.bib} % chargement des fichiers de sources bibliographiques
-\makeindex
-
 % commandes personnelles
+\allsectionsfont{\usefont{T1}{qhv}{b}{n}} %% font
 
-\newcommand{\langue}{\emph} % mots en langues étrangères
-\newcommand{\citital}{\emph} % citation en italique
-
-% TOC
-\renewcommand{\cfttoctitlefont} % ToC title
+\newcommand{\langue}{\emph}			%% mots en langues étrangères en italique
+\newcommand{\citital}{\emph}			%% citation en italique
+\renewcommand{\thefootnote}			%% format de numérotation des notes de bas de page
+             {\alph{footnote}}
+\renewcommand{\bibfont}				%% bibliography font
+             {\usefont{T1}{bch}{m}{n}\selectfont}
+%% TOC             
+\renewcommand{\cfttoctitlefont}		%% TOC title font
              {\usefont{T1}{qhv}{b}{n}\selectfont\huge}
-\renewcommand{\cftchapfont} % chapter titles
+\renewcommand{\cftchapfont}			%% chapter titles font
              {\usefont{T1}{qhv}{b}{n}\selectfont}
-\renewcommand{\cftsecfont} % section titles
+\renewcommand{\cftsecfont}			%% section titles font
              {\usefont{T1}{qhv}{m}{n}\selectfont}
-\renewcommand{\cftsubsecfont} % subsection titles
+\renewcommand{\cftsubsecfont}		%% subsection titles font
              {\usefont{T1}{qhv}{m}{n}\selectfont}
-\renewcommand{\cftsubsubsecfont} % subsubsection titles
+\renewcommand{\cftsubsubsecfont}		%% subsubsection titles font
              {\usefont{T1}{qhv}{m}{n}\selectfont}           
-\renewcommand{\cftchappagefont} % chapter page numbers
+\renewcommand{\cftchappagefont}		%% chapter page numbers font
              {\usefont{T1}{qhv}{b}{n}\selectfont}
-\renewcommand{\cftsecpagefont} % section page numbers
+\renewcommand{\cftsecpagefont}		%% section page numbers font
              {\cftsecfont} 
-\renewcommand{\cftsubsecpagefont} % subsection page numbers
+\renewcommand{\cftsubsecpagefont}	%% subsection page numbers font
              {\cftsubsecfont}
-\renewcommand{\cftsubsubsecpagefont} % subsubsection page numbers
+\renewcommand{\cftsubsubsecpagefont}	%% subsubsection page numbers font
              {\cftsubsubsecfont}
+\renewcommand{\cftdotsep}{\cftnodots}	%% supprime les pointillés
 
-\renewcommand{\cftdotsep}{\cftnodots} % supprime les pointillés dans la TOC
-
-%LOF
-\renewcommand{\cftfigfont} % entry
+%% LOF
+\renewcommand{\cftfigfont}			%% entry font
              {\usefont{T1}{qhv}{m}{n}\selectfont}
-\renewcommand{\cftfigpagefont} % numbers
+\renewcommand{\cftfigpagefont}		%% numbers font
              {\usefont{T1}{qhv}{m}{n}\selectfont}
              
-%LOT
-\renewcommand{\cfttabfont} % entry
+%% LOT
+\renewcommand{\cfttabfont} % entry font
              {\usefont{T1}{qhv}{m}{n}\selectfont}
-\renewcommand{\cfttabpagefont} % numbers
+\renewcommand{\cfttabpagefont} % numbers font
              {\usefont{T1}{qhv}{m}{n}\selectfont}
 
-\renewcommand{\captionfont} % légendes
+%% légendes des figures
+\renewcommand{\captionfont} %% fonte des légendes
              {\usefont{T1}{cmbr}{m}{n}\selectfont}
-\renewcommand{\captionlabelfont} % étiquettes des légendes
+\renewcommand{\captionlabelfont} %% fonte des étiquettes des légendes
              {\usefont{T1}{cmbr}{m}{n}\selectfont}
-             
-\addtokomafont{pagenumber}{\small\sffamily} % style de numero de page
 
-%\renewcommand*\indexpagestyle{scrheadings}
+\addto\captionsfrench{\renewcommand\listfigurename{Liste des figures}} %% titre de la table des figure
 
-\addto\captionsfrench{\renewcommand\listfigurename{Liste des figures}}
+%% notes de fin
+\def\enoteheading{\chapter*{\notesname
+	\@mkboth{\MakeUppercase{\notesname}}{\MakeUppercase{\notesname}}}
+	\mbox{}\par\vskip-\baselineskip}
+\def\enotesize{\normalsize}

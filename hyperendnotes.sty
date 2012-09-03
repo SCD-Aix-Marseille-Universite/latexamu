@@ -132,8 +132,10 @@
 }%
 \def\enoteformat{%
 \rightskip\z@
-\leftskip1.8em
-\parindent\z@
+%\leftskip1.8em
+\noindent
+\hangindent .0
+\parindent
 \leavevmode\llap{%
 \setcounter{Hendnote}{\@theenvalue}%
 \addtocounter{Hendnote}{-1}%

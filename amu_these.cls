@@ -13,23 +13,26 @@
 \RequirePackage[utf8]{inputenc}		%% format d'encodage
 \RequirePackage{lmodern}				%% fontes latin modern
 \RequirePackage[french]{babel}		%% typographie française
-\RequirePackage[babel]{csquotes}		%%  guillemet
+\RequirePackage[babel]{csquotes}		%% guillemet
 
 \RequirePackage{lipsum}				%% lorem ipsum (exemple)
 
 % extensions complémentaires
 \RequirePackage{scrhack,scrpage2}	%% macros et en-tête/pied de page personnalisés (KOMA-Script)
 \PassOptionsToPackage{
-	backend=biber,
-	maxnames=3,
-	minnames=3,
-	sorting=nyt,
-	citestyle=authoryear,
-	bibstyle=numeric}{biblatex}
-\RequirePackage{biblatex}			%% nouvelle façon de gérer ses bibliographies sous LaTeX
+	backend=biber,					%% default backend of biblatex
+	maxnames=3,						%% list names max
+	minnames=3,						%% list names min
+	sorting=nyt,						%% sort by name, year, title
+	citestyle=authoryear,			%% author-year citation scheme
+	bibstyle=numeric,				%% numeric citation scheme
+	backref=true						%% back references (cf. p.)
+	}{biblatex}
+\RequirePackage{biblatex}			%% nouvelle façon de gérer ses bibliographies sous LaTeX http://ctan.org/pkg/biblatex
 \RequirePackage{makeidx}				%% création d'index
 \RequirePackage[titles]{tocloft}		%% TOC LOF LOT
-\RequirePackage{endnotes,hyperendnotes}	%% notes de fin
+\RequirePackage{endnotes}			%% notes de fin
+\RequirePackage{hyperendnotes}		%% attention hyperendnotes.sty hack
 \RequirePackage{pdfpages}			%% insertion de pdf
 \RequirePackage{graphicx}			%% graphiques et figures
 \RequirePackage{caption}				%% légendes des figures
@@ -115,12 +118,14 @@
              {\usefont{T1}{qhv}{m}{n}\selectfont}
 \renewcommand{\cftfigpagefont}		%% numbers font
              {\usefont{T1}{qhv}{m}{n}\selectfont}
+\setlength{\cftfigindent}{0em}
              
 %% LOT
 \renewcommand{\cfttabfont} % entry font
              {\usefont{T1}{qhv}{m}{n}\selectfont}
 \renewcommand{\cfttabpagefont} % numbers font
              {\usefont{T1}{qhv}{m}{n}\selectfont}
+\setlength{\cfttabindent}{0em}
 
 %% légendes des figures
 \renewcommand{\captionfont} %% fonte des légendes
@@ -131,7 +136,10 @@
 \addto\captionsfrench{\renewcommand\listfigurename{Liste des figures}} %% titre de la table des figure
 
 %% notes de fin
+%\let\footnote=\endnote
+
 \def\enoteheading{\chapter*{\notesname
 	\@mkboth{\MakeUppercase{\notesname}}{\MakeUppercase{\notesname}}}
 	\mbox{}\par\vskip-\baselineskip}
+	
 \def\enotesize{\normalsize}

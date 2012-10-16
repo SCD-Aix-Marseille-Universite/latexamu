@@ -2,40 +2,40 @@
 
 \begin{document}
 
+%%% préambule
+%% page de titre
 	\chead{}
 	\pdfbookmark[0]{Page de titre}{titre}
 	\input{tex/titre.tex}
-	
+%% licence
 	\newpage
 	\thispagestyle{empty}
 	\input{tex/licence}
-	
+%% résumé
 	\chapter*{Résumé}
 	\input{tex/resume}
 	\addcontentsline{toc}{chapter}{Résumé}
+%% abstract
 	\chapter*{Abstract}
 	\input{tex/abstract}
 	\addcontentsline{toc}{chapter}{Abstract}
-	
+%% remerciement
 	\chapter*{Remerciements}
 	\input{tex/remercie}
-	
-	% TOC
+%% TOC
+	\newpage
 	\pdfbookmark[0]{Table des matières}{tdm}
 	\tocloftpagestyle{plain}
 	\tableofcontents
-	
-	% LOF
-	\tocloftpagestyle{plain}
+%% LOF
 	\listoffigures
-	\addcontentsline{toc}{chapter}{Liste des figures}
-	% LOT
+%% LOT
 	\begingroup % permet de garder la LOF et la LOT sur la même page
 	\let\clearpage\relax
 	\listoftables
-	\addcontentsline{toc}{chapter}{Liste des tableaux}
 	\endgroup
 	
+%%%% corps
 	\chapter*{Introduction}
 	\input{tex/intro}
 	\addcontentsline{toc}{chapter}{Introduction}
@@ -55,21 +55,22 @@
 	\chapter*{Conclusion}
 	\input{tex/conc}
 	\addcontentsline{toc}{chapter}{Conclusion}
-	
+%%%%
+
+%%% appendice
 	\appendix
-	
+%% bibliographie
+	\newpage
 	\phantomsection
 	\addcontentsline{toc}{chapter}{Bibliographie}
 	\input{tex/biblio}
-	
-	\phantomsection
-	\addcontentsline{toc}{chapter}{Index}
+%% index
 	\printindex
-	
+%% notes
 	\phantomsection
 	\addcontentsline{toc}{chapter}{Notes}
 	\theendnotes
-	
+%% annexes
 	\setcounter{chapter}{0}
 	\renewcommand{\thesection}{\Alph{section}}
 	\chapter*{ANNEXES}

@@ -49,6 +49,14 @@ $ pdflatex these.tex
 <a name="distribution-latex" class="anchor" href="#distribution-latex"><span class="octicon octicon-link"></span></a>Distribution LaTeX</h3>
 
 <p>La distribution LaTeX utilisée/recommandée est <a href="http://www.tug.org/texlive/acquire-netinstall.html">TeX Live</a>.</p>
+
+<h3>
+<a name="conformation-du-fichier" class="anchor" href="#conformation-du-fichier"><span class="octicon octicon-link"></span></a>Conformation du fichier</h3>
+
+<p>Lors du dépôt légal de votre thèse, le fichier pdf compilé avec pdflatex peut être rejeté car non conforme. Vous pouvez le conformer avec une commande ghostscript.</p>
+
+<pre><code>gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.5 -dNOPAUSE -dQUIET -dBATCH -sOutputFile=output.pdf these.pdf
+</code></pre>
       </section>
     </div>
 

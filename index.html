@@ -54,7 +54,7 @@ $ pdflatex these.tex
 <a name="conformation-du-fichier" class="anchor" href="#conformation-du-fichier"><span class="octicon octicon-link"></span></a>Conformation du fichier</h3>
 
 <p>Lors du dépôt légal de votre thèse, le fichier pdf compilé avec pdflatex peut être rejeté car non conforme. Vous pouvez le conformer avec une commande pdftk ou ghostscript.</p>
-<pre><code>gpdftk these.pdf output thesevalide.pdf</code></pre>
+<pre><code>pdftk these.pdf output thesevalide.pdf</code></pre>
 <pre><code>gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.5 -dNOPAUSE -dQUIET -dBATCH -sOutputFile=thesevalide.pdf these.pdf</code></pre>
       </section>
     </div>

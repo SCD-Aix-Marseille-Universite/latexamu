@@ -72,6 +72,7 @@
 \addbibresource{biblio.bib}			%% fichiers sources bibliographiques
 \makeindex							%% index
 
+\pdfminorversion=4				% tell pdflatex to generate PDF in version 1.4
 \pdfobjcompresslevel 0				%% compression des objets
 \pdfcompresslevel 0					%% compression du PDF
 

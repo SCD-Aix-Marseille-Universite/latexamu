@@ -3,6 +3,7 @@
 \begin{document}
 
 %%% préambule
+	\pagenumbering{Roman}
 %% page de titre
 	\chead{}
 	\pdfbookmark[0]{Page de titre}{titre}
@@ -22,6 +23,7 @@
 %% remerciement
 	\chapter*{Remerciements}
 	\input{tex/remercie}
+	\addcontentsline{toc}{chapter}{Remerciements}
 %% TOC
 	\newpage
 	\pdfbookmark[0]{Table des matières}{tdm}
@@ -36,6 +38,8 @@
 	\endgroup
 	
 %%%% corps
+	\pagenumbering{arabic}
+
 	\chapter*{Introduction}
 	\input{tex/intro}
 	\addcontentsline{toc}{chapter}{Introduction}
@@ -74,8 +78,12 @@
 	\setcounter{chapter}{0}
 	\renewcommand{\thesection}{\Alph{section}}
 	\chapter*{ANNEXES}
+	\newpage
 	\addcontentsline{toc}{chapter}{ANNEXES}
 	\input{tex/annexe1}
+	\newpage
 	\input{tex/annexe2}
+	\newpage
+	\input{tex/annexe3}
 
 \end{document}

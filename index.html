@@ -2,9 +2,9 @@
 <html>
 
   <head>
-    <meta charset='utf-8' />
-    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="Latexamu : classe thèse amu [latex]" />
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Latexamu : classe thèse amu [latex]">
 
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
 
@@ -45,6 +45,8 @@ $ pdflatex these.tex
 
 <p>L'utilisation de ce modèle n'est pas obligatoire et peut ne pas correspondre à vos besoins spécifiques ou aux recommandations de votre école doctorale, laboratoire, directeur de recherche.</p>
 
+<p>La page de titre a obtenu l'approbation du Collège Doctoral Aix-Marseille Université.</p>
+
 <h3>
 <a name="distribution-latex" class="anchor" href="#distribution-latex"><span class="octicon octicon-link"></span></a>Distribution LaTeX</h3>
 
@@ -54,8 +56,10 @@ $ pdflatex these.tex
 <a name="conformation-du-fichier" class="anchor" href="#conformation-du-fichier"><span class="octicon octicon-link"></span></a>Conformation du fichier</h3>
 
 <p>Lors du dépôt légal de votre thèse, le fichier pdf compilé avec pdflatex peut être rejeté car non conforme. Vous pouvez le conformer avec une commande pdftk ou ghostscript.</p>
-<pre><code>pdftk these.pdf output thesevalide.pdf</code></pre>
-<pre><code>gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.5 -dNOPAUSE -dQUIET -dBATCH -sOutputFile=thesevalide.pdf these.pdf</code></pre>
+
+<pre><code>pdftk these.pdf output thesevalide.pdf
+gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.5 -dNOPAUSE -dQUIET -dBATCH -sOutputFile=output.pdf these.pdf
+</code></pre>
       </section>
     </div>
 

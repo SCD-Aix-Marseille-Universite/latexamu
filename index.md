@@ -1,15 +1,14 @@
 ### Modèle de mise en page.
-Ce modèle de mise en page pour les thèses de doctorat soutenues à Aix Marseille Université propose un ensemble de fichiers LaTeX commentés, prêt à être compilés.
+Ce modèle de mise en page pour les thèses de doctorat soutenues à Aix Marseille Université propose un ensemble de fichiers LaTeX commentés, prêt à être compilés. La page de titre a obtenu l'approbation du Collège Doctoral Aix-Marseille Université.
 
 ```
-$ biber these
-$ makeindex these.idx
-$ pdflatex these.tex
+biber these
+makeindex these.idx
+pdflatex these.tex
 ```
 
 Visualiser le [fichier pdf](https://github.com/bibliogum/latexamu/blob/master/these.pdf?raw=true).
 
-L'utilisation de ce modèle n'est pas obligatoire. La page de titre a obtenu l'approbation du Collège Doctoral Aix-Marseille Université.
 
 ### Distribution LaTeX
 

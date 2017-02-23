@@ -2,7 +2,7 @@
 
 \begin{document}
 
-%%% préambule
+%%%% préambule
 %% page de titre
 	\chead{}
 	\pdfbookmark[0]{Page de titre}{titre}
@@ -35,42 +35,42 @@
 	\let\clearpage\relax
 	\listoftables
 	\endgroup
-	
+
 %%%% corps
 	\chapter*{Introduction}
 	\input{tex/intro}
 	\addcontentsline{toc}{chapter}{Introduction}
-	
+
 	\chapter{Généralités}
 	\input{tex/chap1}
-	
+
 	\chapter{Méthodologie de la recherche}
 	\input{tex/chap2}
-	
+
 	\chapter{Troisième partie}
 	\input{tex/chap3}
-	
+
 	\chapter{Quatrième partie}
 	\input{tex/chap4}
-	
+
 	\chapter*{Conclusion}
 	\input{tex/conc}
 	\addcontentsline{toc}{chapter}{Conclusion}
 %%%%
 
-%%% appendice
+%%%% appendice
 	\appendix
 %% bibliographie
 	\newpage
-	\phantomsection
-	\addcontentsline{toc}{chapter}{Bibliographie}
+	\phantomsection\addcontentsline{toc}{chapter}{Bibliographie}
 	\input{tex/biblio}
 %% index
-	\addcontentsline{toc}{chapter}{Index}
+	\newpage
+	\phantomsection\addcontentsline{toc}{chapter}{Index}
 	\printindex
 %% notes
-	\phantomsection
-	\addcontentsline{toc}{chapter}{Notes}
+	\newpage
+	\phantomsection\addcontentsline{toc}{chapter}{Notes}
 	\theendnotes
 %% annexes
 	\setcounter{chapter}{0}
@@ -81,7 +81,5 @@
 	\input{tex/annexe1}
 	\newpage
 	\input{tex/annexe2}
-	\newpage
-	\input{tex/annexe3}
 
 \end{document}

@@ -9,12 +9,14 @@
 \KOMAoptions{paper=a4,fontsize=12pt,DIV=12,BCOR=0mm,twoside=off,index=totoc,listof=totoc}
 
 %%% extensions minimales
-\RequirePackage[T1]{fontenc}			%% fontes de caractère
-\RequirePackage[utf8]{inputenc}		%% format d'encodage
-\RequirePackage{lmodern}				  %% fontes latin modern
-\RequirePackage[french]{babel}		%% typographie française
-\RequirePackage[babel]{csquotes}	%% guillemet
-\MakeAutoQuote{«}{»}							%% espacement automatique
+\RequirePackage[utf8]{inputenc}					%% encodage du texte
+\RequirePackage[TS1,T1]{fontenc}				%% encodage des fontes
+\RequirePackage{textcomp}				  			%% symboles complémentaires
+\RequirePackage{lmodern}				  			%% polices latin modern
+\RequirePackage{microtype}							%% microtypographie
+\RequirePackage[english,french]{babel}	%% typographie (français par défaut)
+\RequirePackage[babel]{csquotes}				%% guillemets
+\MakeAutoQuote{«}{»}										%% espacement automatique
 
 \RequirePackage{lipsum}				    %% lorem ipsum (exemple)
 
@@ -26,7 +28,7 @@
 	minnames=3,											%% nombre min. de noms auteurs
 	sorting=nyt,										%% trier par nom, année, titre
 	citestyle=authoryear,						%% style de citation auteur-année
-	bibstyle=numeric,								%% style de bibliographie numérique
+	bibstyle=alphabetic,						%% style de bibliographie alphabetique
 	backref=true										%% retour de références (cf. p.)
 	}{biblatex}
 \RequirePackage{biblatex}					%% gestion de la bibliographie avec biblatex
@@ -79,79 +81,64 @@
 
 \hypersetup{
 	backref=true,										%% ajout de liens
-	pagebackref=true,								%% dans bibliographie
-	hyperindex=true,								%% dans index
-	colorlinks=true,								%% colorise liens
+	pagebackref=true,								%% dans la bibliographie
+	hyperindex=true,								%% dans l'index
 	breaklinks=true,								%% retour à la ligne (si lien trop long)
-	urlcolor= blue,									%% couleur hyperliens
+	colorlinks=true,								%% colorise liens
+	urlcolor=blue,									%% couleur hyperliens
   citecolor=blue,									%% couleur liens bibliographie
-	linkcolor= blue,					      %% couleur liens internes
+	linkcolor=blue,						      %% couleur liens internes
+	anchorcolor=blue,								%% couleur liens ancres
 	bookmarks=true,					        %% signets Acrobat
   bookmarksopen=false,						%% signets repliés par défaut
   linktocpage=false,							%% lien numéro de page dans TOC
 %% métadonnées :									%% ATTENTION à compléter
 	pdftitle={Titre},
 	pdfauthor={Prénom NOM},
-	pdfsubject={Sujet},
-%% mots-clés :   								  %% ATTENTION à compléter
+	pdfsubject={Résumé},
 	pdfkeywords = {mot clé, keyword, ...},
 }
 
 %%% commandes personnelles
-\allsectionsfont{\usefont{T1}{qhv}{b}{n}} %% font
-
 \newcommand{\langue}{\emph}				%% mots en langues étrangères en italique
 \newcommand{\citital}{\emph}			%% citation en italique
-\renewcommand{\thefootnote}				%% format de numérotation des notes de bas de page
-             {\alph{footnote}}
-\renewcommand{\bibfont}						%% bibliography font
-             {\usefont{T1}{bch}{m}{n}\selectfont}
+\renewcommand{\thefootnote}{\alph{footnote}}			%% format de numérotation des notes de bas de page
+
+%% polices et graisse des fontes
+\allsectionsfont										{\usefont{T1}{qhv}{b}{n}} 								%% fonte des titres
+\renewcommand{\bibfont}							{\usefont{T1}{bch}{m}{n}\selectfont}			%% fonte de la bibliographie
 
 %% TOC
-\renewcommand{\cfttoctitlefont}		%% TOC title font
-             {\usefont{T1}{qhv}{b}{n}\selectfont\huge}
-\renewcommand{\cftchapfont}				%% chapter titles font
-             {\usefont{T1}{qhv}{b}{n}\selectfont}
-\renewcommand{\cftsecfont}				%% section titles font
-             {\usefont{T1}{qhv}{m}{n}\selectfont}
-\renewcommand{\cftsubsecfont}			%% subsection titles font
-             {\usefont{T1}{qhv}{m}{n}\selectfont}
-\renewcommand{\cftsubsubsecfont}	%% subsubsection titles font
-             {\usefont{T1}{qhv}{m}{n}\selectfont}
-\renewcommand{\cftchappagefont}		%% chapter page numbers font
-             {\usefont{T1}{qhv}{b}{n}\selectfont}
-\renewcommand{\cftsecpagefont}		%% section page numbers font
-             {\cftsecfont}
-\renewcommand{\cftsubsecpagefont}	%% subsection page numbers font
-             {\cftsubsecfont}
-\renewcommand{\cftsubsubsecpagefont}	%% subsubsection page numbers font
-             {\cftsubsubsecfont}
-\renewcommand{\cftdotsep}{\cftnodots}	%% supprime les pointillés
+\renewcommand{\cfttoctitlefont}			{\usefont{T1}{qhv}{b}{n}\selectfont\huge}	%% fonte titre title
+\renewcommand{\cftchapfont}					{\usefont{T1}{qhv}{b}{n}\selectfont}			%% fonte titre chapter
+\renewcommand{\cftsecfont}					{\usefont{T1}{qhv}{m}{n}\selectfont}			%% fonte titre section
+\renewcommand{\cftsubsecfont}				{\usefont{T1}{qhv}{m}{n}\selectfont}			%% fonte titre subsection
+\renewcommand{\cftsubsubsecfont}		{\usefont{T1}{qhv}{m}{n}\selectfont}			%% fonte titre subsubsection
+\renewcommand{\cftchappagefont}			{\cftchapfont}			%% fonte numéro de page chapter
+\renewcommand{\cftsecpagefont}			{\cftsecfont}				%% fonte numéro de page section
+\renewcommand{\cftsubsecpagefont}		{\cftsubsecfont}		%% fonte numéro de page subsection
+\renewcommand{\cftsubsubsecpagefont}{\cftsubsubsecfont}	%% fonte numéro de page subsubsection
+
+\renewcommand{\cftdotsep}{\cftnodots}										%% supprime les pointillés
 
 %% LOF
-\renewcommand{\cftfigfont}				%% entry font
-             {\usefont{T1}{qhv}{m}{n}\selectfont}
-\renewcommand{\cftfigpagefont}		%% numbers font
-             {\usefont{T1}{qhv}{m}{n}\selectfont}
+\renewcommand{\cftfigfont}          {\usefont{T1}{qhv}{m}{n}\selectfont}		%% fonte entrée
+\renewcommand{\cftfigpagefont}      {\usefont{T1}{qhv}{m}{n}\selectfont}		%% fonte numéro de page
 \setlength{\cftfigindent}{0em}
 
 %% LOT
-\renewcommand{\cfttabfont}				%% entry font
-             {\usefont{T1}{qhv}{m}{n}\selectfont}
-\renewcommand{\cfttabpagefont}		%% numbers font
-             {\usefont{T1}{qhv}{m}{n}\selectfont}
+\renewcommand{\cfttabfont}          {\usefont{T1}{qhv}{m}{n}\selectfont}		%% fonte entrée
+\renewcommand{\cfttabpagefont}      {\usefont{T1}{qhv}{m}{n}\selectfont}		%% fonte numéro de page
 \setlength{\cfttabindent}{0em}
 
 %% légendes des figures
-\renewcommand{\captionfont}				%% fonte des légendes
-             {\usefont{T1}{cmbr}{m}{n}\selectfont}
-\renewcommand{\captionlabelfont}	%% fonte des étiquettes des légendes
-             {\usefont{T1}{cmbr}{m}{n}\selectfont}
+\renewcommand{\captionfont}         {\usefont{T1}{cmbr}{m}{n}\selectfont}		%% fonte légende
+\renewcommand{\captionlabelfont}    {\usefont{T1}{cmbr}{m}{n}\selectfont}		%% fonte étiquette légende
 
-\addto\captionsfrench{\renewcommand\listfigurename{Liste des figures}} %% titre de la table des figure
+\addto\captionsfrench{\renewcommand\listfigurename{Liste des figures}} 			%% titre de la table des figures
 
 %% notes de fin
-%\let\footnote=\endnote						%% passe les footnote en endnote
+%\let\footnote=\endnote						%% passe les footnote en endnote (décommenter)
 \def\enoteheading{\chapter*{\notesname
 	\@mkboth{\MakeUppercase{\notesname}}{\MakeUppercase{\notesname}}}
 	\mbox{}\par\vskip-\baselineskip}

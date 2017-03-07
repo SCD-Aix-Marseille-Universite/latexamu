@@ -32,7 +32,8 @@
 	backref=true										%% retour de références (cf. p.)
 	}{biblatex}
 \RequirePackage{biblatex}					%% gestion de la bibliographie avec biblatex
-\RequirePackage{imakeidx}					%% création d'index
+\RequirePackage{imakeidx}					%% index
+\RequirePackage[intoc]{nomencl}					%% nomenclature
 \RequirePackage[titles]{tocloft}	%% TOC LOF LOT
 \RequirePackage{endnotes}					%% notes de fin
 \RequirePackage{hyperendnotes}		%% !attention! fichier hyperendnotes.sty hack
@@ -73,7 +74,8 @@
 \graphicspath{{fig/}}							%% chemin vers fichiers images
 \floatplacement{figure}{H}				%% placer une figure là où elle a été appelée
 \addbibresource{biblio.bib}				%% fichiers sources bibliographiques
-\makeindex												%% génère l'index
+\makeindex[program=makeindex,options=-s these,columns=1]												%% génère l'index
+\makenomenclature
 
 \pdfminorversion=5								%% PDF en version 1.5
 \pdfobjcompresslevel 0						%% compression des objets

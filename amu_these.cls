@@ -74,24 +74,24 @@
 \graphicspath{{fig/}}							%% chemin vers fichiers images
 \floatplacement{figure}{H}				%% placer une figure là où elle a été appelée
 \addbibresource{biblio.bib}				%% fichiers sources bibliographiques
-\makeindex[program=makeindex,options=-s these,columns=1]												%% génère l'index
 \makenomenclature
+\makeindex[program=makeindex,options=-s these,columns=1]												%% génère l'index
 
 \pdfminorversion=5								%% PDF en version 1.5
 \pdfobjcompresslevel 0						%% compression des objets
 \pdfcompresslevel 0								%% compression du PDF
 
 \hypersetup{
-	backref=true,										%% ajout de liens
-	pagebackref=true,								%% dans la bibliographie
-	hyperindex=true,								%% dans l'index
+	%backref=true,										%% ajout de liens (par défaut)
+	%pagebackref=true,								%% dans la bibliographie (par défaut)
+	%hyperindex=true,								%% dans l'index (par défaut)
+	%bookmarks=true,					        %% signets Acrobat (par défaut)
 	breaklinks=true,								%% retour à la ligne (si lien trop long)
 	colorlinks=true,								%% colorise liens
 	urlcolor=blue,									%% couleur hyperliens
   citecolor=blue,									%% couleur liens bibliographie
 	linkcolor=blue,						      %% couleur liens internes
 	anchorcolor=blue,								%% couleur liens ancres
-	bookmarks=true,					        %% signets Acrobat
   bookmarksopen=false,						%% signets repliés par défaut
   linktocpage=false,							%% lien numéro de page dans TOC
 %% métadonnées :									%% ATTENTION à compléter
@@ -104,7 +104,7 @@
 %%% commandes personnelles
 \newcommand{\langue}{\emph}				%% mots en langues étrangères en italique
 \newcommand{\citital}{\emph}			%% citation en italique
-\renewcommand{\thefootnote}{\alph{footnote}}			%% format de numérotation des notes de bas de page
+%\renewcommand{\thefootnote}{\alph{footnote}}			%% format de numérotation des notes de bas de page
 
 %% polices et graisse des fontes
 \allsectionsfont										{\usefont{T1}{qhv}{b}{n}} 								%% fonte des titres

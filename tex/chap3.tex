@@ -1,3 +1,20 @@
+\section{Modèles}
+\lipsum[11]\index{Nam dui ligula}
+\begin{table}[h!tbp]
+\begin{center}
+\begin{tabular}{c|*{5}{c}}
+0\\
+$c_2$    & $a_{21}$\\
+$c_3$    & $a_{31}$ & $a_{32}$\\
+$\vdots$ & $\vdots$ &           & $\ddots$\\
+$c_s$    & $a_{s1}$ & $a_{s2}$  & $\cdots$ & $a_{s,s - 1}$\\
+\hline
+         & $b_1$    & $b_2$     & $\cdots$ & $b_{s-1}$     & $b_s$\\
+\end{tabular}
+\end{center}
+\caption{Tableau de Butcher}
+\label{table:butcher}
+\end{table}
 \lipsum[2]\index{Nam dui ligula}
 \begin{table}[h!tbp]
 \begin{center}
@@ -17,19 +34,9 @@ $\lambda$ (nm) & $(\alpha_{\lambda}/\alpha_{426,7})_{moy}$ & écart type \\
 \caption[Valeur moyenne et écart type des rapports $\alpha_{\lambda}/\alpha_{426,7}$]{Valeur moyenne et écart type des rapports $\alpha_{\lambda}/\alpha_{426,7}$ mesurés pour les chocs plasma de la deuxième série.}
 \label{table:alpha}
 \end{table}
-\lipsum[3]\index{Nulla malesuada}
-\begin{table}[h!tbp]
-\begin{center}
-\begin{tabular}{c|*{5}{c}}
-0\\
-$c_2$    & $a_{21}$\\
-$c_3$    & $a_{31}$ & $a_{32}$\\
-$\vdots$ & $\vdots$ &           & $\ddots$\\
-$c_s$    & $a_{s1}$ & $a_{s2}$  & $\cdots$ & $a_{s,s - 1}$\\
-\hline
-         & $b_1$    & $b_2$     & $\cdots$ & $b_{s-1}$     & $b_s$\\
-\end{tabular}
-\end{center}
-\caption{Tableau de Butcher}
-\label{table:butcher}
-\end{table}
+\newpage
+\section{Articles}
+\fullcite{mohamed_clinical_2014}
+% avant d'intégrer un article dans votre thèse, consulter http://www.sherpa.ac.uk/romeo/ si vous souhaitez diffuser sur internet
+\includepdfset{pagecommand=\thispagestyle{scrheadings}} % ajoute la numérotation continue des pages aux fichiers pdf importés
+\includepdf[pages=-]{BMC-1471-2334-14-S2-O1.pdf}

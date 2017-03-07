@@ -1,7 +1,9 @@
 ### Modèle de mise en page.
 Ce modèle de mise en page pour les thèses de doctorat soutenues à Aix Marseille Université propose un ensemble de fichiers LaTeX commentés, prêt à être compilés dont une classe LaTeX [.cls].
 
-La page de titre a obtenu l'approbation du Collège Doctoral Aix-Marseille Université. [Télécharger le PDF](https://raw.githubusercontent.com/SCD-Aix-Marseille-Universite/latexamu/gh-pages/these.pdf)
+La page de titre a obtenu l'approbation du Collège Doctoral Aix-Marseille Université.
+
+[Télécharger le PDF](https://raw.githubusercontent.com/SCD-Aix-Marseille-Universite/latexamu/gh-pages/these.pdf)
 
 ### Distribution LaTeX
 
@@ -15,9 +17,8 @@ La distribution LaTeX utilisée/recommandée est la [TeX Live](http://www.tug.or
 * signets dans le menu latéral Acrobat
 * listes des figures et des tableaux
 * bibliographie et notes de fin
-* hyperliens aller-retour sur les citations
-* hyperliens aller-retour sur les notes de fin
-* titrage consistant sur le tout le document
+* hyperliens aller-retour sur les citations et les notes de fin
+* titrage consistant sur tout le document
 * graisse moyenne pour la lecture sur écran
 * numérotation des pages et du PDF identique
 * numérotation continue sur les PDF insérés

@@ -12,6 +12,7 @@ La distribution LaTeX utilisée/recommandée est la [TeX Live](http://www.tug.or
 ### Résumé des fonctionnalités du document
 
 * fichiers sources commentés
+* typographie européenne (KOMA-Script)
 * sommaire, glossaire et index
 * hyperliens dans le sommaire et l'index
 * signets dans le menu latéral Acrobat
@@ -26,7 +27,7 @@ La distribution LaTeX utilisée/recommandée est la [TeX Live](http://www.tug.or
 
 ### Conformation du fichier
 
-Lors du dépôt légal de votre thèse, si le le fichier PDF compilé avec pdflatex est rejeté comme non conforme par le service [Facile](https://facile.cines.fr/) pour archivage au CINES. Vous pouvez le conformer avec une simple commande ghostscript.
+Lors du dépôt légal de votre thèse, si le fichier PDF compilé avec pdflatex est rejeté comme non conforme par le service [Facile](https://facile.cines.fr/) pour archivage au CINES. Vous pouvez le conformer avec une simple commande ghostscript.
 
 ```
 gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.5 -dNOPAUSE -dQUIET -dBATCH -sOutputFile=these-valide.pdf these.pdf

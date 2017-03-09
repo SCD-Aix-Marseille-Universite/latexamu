@@ -3,6 +3,54 @@
 
 @import "{{ site.theme }}";
 
+body {
+    background-image: -webkit-linear-gradient(left,
+    #FF8800,
+    #FF8800 14.285%,
+    #FBBA00 14.285%,
+    #FBBA00 28.57%,
+    #7CB61F 28.57%,
+    #7CB61F 42.855%,
+    #22BBEA 42.855%,
+    #22BBEA 57.14%,
+    #0071B9 57.14%,
+    #0071B9 71.425%,
+    #5943FF 71.425%,
+    #5943FF 85.71%,
+    #B243FF 85.71%) !important;
+    background-image: -ms-linear-gradient(left,
+    #FF8800,
+    #FF8800 14.285%,
+    #FBBA00 14.285%,
+    #FBBA00 28.57%,
+    #7CB61F 28.57%,
+    #7CB61F 42.855%,
+    #22BBEA 42.855%,
+    #22BBEA 57.14%,
+    #0071B9 57.14%,
+    #0071B9 71.425%,
+    #5943FF 71.425%,
+    #5943FF 85.71%,
+    #B243FF 85.71%) !important;
+    background-image: linear-gradient(to right,
+    #FF8800,
+    #FF8800 14.285%,
+    #FBBA00 14.285%,
+    #FBBA00 28.57%,
+    #7CB61F 28.57%,
+    #7CB61F 42.855%,
+    #22BBEA 42.855%,
+    #22BBEA 57.14%,
+    #0071B9 57.14%,
+    #0071B9 71.425%,
+    #5943FF 71.425%,
+    #5943FF 85.71%,
+    #B243FF 85.71%) !important;
+    background-size: 100% 3px !important;
+    background-position: 50% 0% !important;
+    background-repeat: no-repeat !important;
+}
+
 .page-header {
     background-color: #155799;
     background-image: none;

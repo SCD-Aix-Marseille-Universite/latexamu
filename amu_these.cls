@@ -75,7 +75,7 @@
 \floatplacement{figure}{H}					%% placer une figure là où elle a été appelée
 \addbibresource{biblio.bib}					%% fichiers sources bibliographiques
 \makenomenclature											%% génère la nomenclature
-\makeindex[program=makeindex,options=-s these,columns=1]	%% génère l'index
+\makeindex[program=makeindex,options=-s these,columns=1,intoc]	%% génère l'index
 
 \pdfminorversion=5							%% PDF en version 1.5
 \pdfobjcompresslevel 0						%% compression des objets

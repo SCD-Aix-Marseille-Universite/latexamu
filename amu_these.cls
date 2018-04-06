@@ -56,9 +56,9 @@
 	amsmath,
 	amsfonts,
 	amscd}									%% mathématiques
-\PassOptionsToPackage{squaren,Gray,cdot}{SIunits}
-\RequirePackage{SIunits}					%% unités du système international
-\PassOptionsToPackage{version=3}{mhchem}
+\PassOptionsToPackage{load-configurations = abbreviations}{siunitx}
+\RequirePackage{siunitx}					%% unités du système international
+\PassOptionsToPackage{version=4}{mhchem}
 \RequirePackage{mhchem}						%% chimie
 
 %% charger ce Package en dernier

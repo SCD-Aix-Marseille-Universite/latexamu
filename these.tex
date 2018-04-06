@@ -23,6 +23,8 @@
 	\chapter*{Remerciements}
 	\input{tex/remercie}
 	\addcontentsline{toc}{chapter}{Remerciements}
+%% désactive la protrusion localement (TOCLOFT NOMENCL)
+    \microtypesetup{protrusion=false}
 %% TOC
 	\newpage
 	\pdfbookmark[0]{Table des matières}{tdm}
@@ -37,6 +39,8 @@
 	\endgroup
 %% Nomenclature
 	\input{tex/nomenclature}
+%% rétabli la protrusion
+    \microtypesetup{protrusion=true}
 
 %%%% corps
 	\chapter*{Introduction}

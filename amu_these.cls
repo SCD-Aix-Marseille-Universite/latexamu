@@ -21,7 +21,7 @@
 \RequirePackage{lipsum}						%% lorem ipsum (exemple)
 
 %%% extensions complémentaires
-\RequirePackage{scrhack,scrpage2}			%% macros et en-tête/pied de page personnalisés (KOMA-Script)
+\RequirePackage{scrhack,scrlayer-scrpage}		%% macros et en-tête/pied de page personnalisés (KOMA-Script)
 \PassOptionsToPackage{
 	backend=biber,							%% compilateur par défaut pour biblatex
 	maxnames=3,								%% nombre max. de noms auteurs

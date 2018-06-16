@@ -1,6 +1,10 @@
+This repository was forked from [SCD-Aix-Marseille-Universite/latexamu](https://github.com/SCD-Aix-Marseille-Universite/latexamu) on 2018-06-16.
+
 ## Compilation
 
-Install [TeX Live](http://www.tug.org/texlive/acquire-netinstall.html) in the usual way.
+Install [Texmaker](http://www.xm1math.net/texmaker/) in the usual way.
+
+The compilation script is:
 
 ```bash
 pdflatex these.tex
@@ -10,6 +14,8 @@ makeindex these.idx -s these.ist
 pdflatex these.tex
 pdflatex these.tex
 ```
-## Contributing
-
-[Bug reports and pull requests are welcome on GitHub](https://github.com/SCD-Aix-Marseille-Universite/latexamu).
+This script can be added to Texmaker by going to **Options > Configure Texmaker > Quick Build > User**
+and changing it to 
+```
+pdflatex %.tex | biber % | makeindex %.nlo -s nomencl.ist -o %.nls -t %.nlg | makeindex %.idx -s %.ist | pdflatex %.tex | pdflatex %.tex
+```

@@ -6,76 +6,99 @@
 
 %%% classe de base (KOMA-Script)
 \LoadClass{scrreprt}						%% classe report KOMA-Script
-\KOMAoptions{paper=a4,fontsize=12pt,DIV=12,BCOR=0mm,twoside=off,index=totoc,listof=totoc}
+\KOMAoptions{
+	paper=a4,
+	fontsize=12pt,
+	DIV=12,
+	BCOR=0mm,
+	twoside=off,
+	listof=totoc,
+	index=totoc
+	}
+
+\RequirePackage{lipsum}						%% lorem ipsum (exemple)
 
 %%% extensions minimales
 \RequirePackage[utf8]{inputenc}				%% encodage du texte
 \RequirePackage[TS1,T1]{fontenc}			%% encodage des fontes
-\RequirePackage{textcomp}					%% symboles complémentaires
-\RequirePackage{lmodern}					%% polices latin modern
-\RequirePackage{microtype}					%% microtypographie
+\RequirePackage{lmodern}					%% polices latines
 \RequirePackage[english,french]{babel}		%% typographie (français par défaut)
-\RequirePackage[babel]{csquotes}			%% guillemets
-\MakeAutoQuote{«}{»}						%% espacement automatique
+\RequirePackage[babel]{csquotes}			%% guillemets typographiques
+\MakeAutoQuote{«}{»}						%% espacement automatique des guillemets
 
-\RequirePackage{lipsum}						%% lorem ipsum (exemple)
+%%% typographie et mise en page
+\RequirePackage{scrhack}					%% macros personnalisées (KOMA-Script)
+\RequirePackage{scrlayer-scrpage}			%% en-tête/pied de page personnalisés (KOMA-Script)
+\RequirePackage{textcomp}					%% symboles complémentaires
+\RequirePackage{hyphenat}					%% césure explicite
+\RequirePackage{microtype}					%% microtypographie
 
-%%% extensions complémentaires
-\RequirePackage{scrhack,scrlayer-scrpage}			%% macros et en-tête/pied de page personnalisés (KOMA-Script)
-\PassOptionsToPackage{
+\RequirePackage[bottom=10em]{geometry}		%% réduit le bas de page pour pouvoir numéroter les pdf insérés (réduire plus si nécessaire)
+\RequirePackage{setspace}					%% modification de l'interligne
+
+\pagestyle{scrheadings}						%% style de page
+\addtokomafont{pagenumber}{\small\sffamily}			%% numéro de page en police sans-sérif (commenter)
+%\setkomafont{disposition}{\normalcolor\bfseries}	%% titrage en police sérif (décommenter)
+
+%%% tableaux et figures
+\RequirePackage{float}						%% définit les objets flottants tels que les figures et tableaux
+\RequirePackage{graphicx}					%% graphiques et figures
+\RequirePackage{caption}					%% légendes des figures
+\RequirePackage{tabularx}					%% tableaux
+\RequirePackage{multirow}					%% fusion des lignes dans les tableaux 
+\RequirePackage{array}						%% amélioration des tableaux
+\RequirePackage{booktabs}					%% tables formelles
+
+\floatplacement{figure}{H}					%% placer une figure là où elle a été appelée
+\graphicspath{{fig/}}						%% chemin vers fichiers images
+
+%%% appareil de référence
+\PassOptionsToPackage{						%% options biblatex
 	backend=biber,							%% compilateur par défaut pour biblatex
 	maxnames=3,								%% nombre max. de noms auteurs
 	minnames=3,								%% nombre min. de noms auteurs
 	sorting=nyt,							%% trier par nom, année, titre
 	citestyle=authoryear,					%% style de citation auteur-année
-	bibstyle=alphabetic,					%% style de bibliographie alphabetique
-	backref=true							%% retour de références (cf. p.)
-	}{biblatex}
+	bibstyle=alphabetic,					%% style de bibliographie alphabétique
+	backref=true							%% liens retour des références (cf. p.)
+	}
+	{biblatex}
 \RequirePackage{biblatex}					%% gestion de la bibliographie avec biblatex
+\RequirePackage{enotez}						%% notes de fin
+\setenotez{
+	list-name=Notes,
+	totoc=chapter,
+	backref
+	}
 \RequirePackage{imakeidx}					%% index
 \RequirePackage[intoc]{nomencl}				%% nomenclature
 \RequirePackage[titles]{tocloft}			%% TOC LOF LOT
-\RequirePackage{endnotes}					%% notes de fin
-\RequirePackage{hyperendnotes}				%% !attention! fichier hyperendnotes.sty hack
-\RequirePackage{pdfpages}					%% insertion de pdf
-\RequirePackage{graphicx}					%% graphiques et figures
-\RequirePackage{caption}					%% légendes des figures
-\RequirePackage{array,
-	multirow,
-	tabularx}								%% amélioration des tableaux
-\RequirePackage{float}						%% définit les objets flottants tels que les figures et tableaux
-\RequirePackage{setspace}					%% modification de l'interligne
-\RequirePackage{sectsty}					%% style des section
 
-\RequirePackage[bottom=10em]{geometry}		%% réduit le bas de page pour pouvoir numéroté les pdf insérés (réduire plus si nécessaire)
+\addbibresource{biblio.bib}					%% fichiers sources bibliographiques
+\makenomenclature							%% génère la nomenclature
+\makeindex[									%% génère l'index
+	program=makeindex,
+	options=-s these,
+	columns=1,
+	intoc
+	]
 
 %%% mathématiques, physique, chimie (à adapter)
-\RequirePackage{amsthm,
-	amssymb,
-	amsbsy,
-	amsmath,
-	amsfonts,
-	amscd}									%% mathématiques
-\PassOptionsToPackage{load-configurations = abbreviations}{siunitx}
+\RequirePackage{amsmath}					%% formules mathématiques
+\RequirePackage{amssymb}					%% symboles mathématiques
+\RequirePackage{amsfonts}					%% polices mathématiques
+
+\RequirePackage{xspace}
+\RequirePackage{nicefrac}		% Fractions 'inline'
+
+\PassOptionsToPackage{load-configurations=abbreviations}{siunitx}
 \RequirePackage{siunitx}					%% unités du système international
 \PassOptionsToPackage{version=4}{mhchem}
 \RequirePackage{mhchem}						%% chimie
 
-%% charger ce Package en dernier
-\RequirePackage{hyperref}					%% pdf interactifs
-
-%%% paramètres
-\pagestyle{scrheadings}						%% style de page
-\addtokomafont{pagenumber}{\small\sffamily}	%% style de numéro de page
-
-\setcounter{secnumdepth}{3}					%% profondeur des sections numérotées
-\setcounter{tocdepth}{2}					%% profondeur des sections dans la table des matières
-
-\graphicspath{{fig/}}						%% chemin vers fichiers images
-\floatplacement{figure}{H}					%% placer une figure là où elle a été appelée
-\addbibresource{biblio.bib}					%% fichiers sources bibliographiques
-\makenomenclature											%% génère la nomenclature
-\makeindex[program=makeindex,options=-s these,columns=1,intoc]	%% génère l'index
+%%% PDF
+\RequirePackage{pdfpages}					%% insertion de pdf
+\RequirePackage{hyperref}					%% pdf interactifs (charger le package hyperref en dernier)
 
 \pdfminorversion=5							%% PDF en version 1.5
 \pdfobjcompresslevel 0						%% compression des objets
@@ -92,7 +115,7 @@
 	citecolor=blue,							%% couleur liens bibliographie
 	linkcolor=blue,							%% couleur liens internes
 	anchorcolor=blue,						%% couleur liens ancres
-	bookmarksopen=false,						%% signets repliés par défaut
+	bookmarksopen=false,					%% signets repliés par défaut
 	linktocpage=false,						%% lien numéro de page dans TOC
 %% métadonnées :							%% ATTENTION à compléter
 	pdftitle={Titre},
@@ -101,48 +124,16 @@
 	pdfkeywords = {mot clé, keyword, ...},
 }
 
+%%% paramètres
+\setcounter{secnumdepth}{3}					%% profondeur des sections numérotées
+\setcounter{tocdepth}{2}					%% profondeur des sections dans la table des matières
+
+
 %%% commandes personnelles
 \newcommand{\langue}{\emph}					%% mots en langues étrangères en italique
 \newcommand{\citital}{\emph}				%% citation en italique
 
-%\renewcommand{\thefootnote}{\alph{footnote}}	%% format de numérotation des notes de bas de page
+%\renewcommand{\thefootnote}{\alph{footnote}}		%% format de numérotation des notes de bas de page (décommenter)
+%\let\footnote=\endnote								%% passe les footnote en endnote (décommenter)
 
-%% polices et graisse des fontes
-\allsectionsfont					{\usefont{T1}{qhv}{b}{n}} 					%% fonte des titres
-\renewcommand{\bibfont}				{\usefont{T1}{bch}{m}{n}\selectfont}		%% fonte de la bibliographie
 
-%% TOC
-\renewcommand{\cfttoctitlefont}		{\usefont{T1}{qhv}{b}{n}\selectfont\huge}	%% fonte titre title
-\renewcommand{\cftchapfont}			{\usefont{T1}{qhv}{b}{n}\selectfont}		%% fonte titre chapter
-\renewcommand{\cftsecfont}			{\usefont{T1}{qhv}{m}{n}\selectfont}		%% fonte titre section
-\renewcommand{\cftsubsecfont}		{\usefont{T1}{qhv}{m}{n}\selectfont}		%% fonte titre subsection
-\renewcommand{\cftsubsubsecfont}	{\usefont{T1}{qhv}{m}{n}\selectfont}		%% fonte titre subsubsection
-\renewcommand{\cftchappagefont}		{\cftchapfont}								%% fonte numéro de page chapter
-\renewcommand{\cftsecpagefont}		{\cftsecfont}								%% fonte numéro de page section
-\renewcommand{\cftsubsecpagefont}	{\cftsubsecfont}							%% fonte numéro de page subsection
-\renewcommand{\cftsubsubsecpagefont}{\cftsubsubsecfont}							%% fonte numéro de page subsubsection
-
-\renewcommand{\cftdotsep}{\cftnodots}											%% supprime les pointillés
-
-%% LOF
-\renewcommand{\cftfigfont}          {\usefont{T1}{qhv}{m}{n}\selectfont}		%% fonte entrée
-\renewcommand{\cftfigpagefont}      {\usefont{T1}{qhv}{m}{n}\selectfont}		%% fonte numéro de page
-\setlength{\cftfigindent}{0em}
-
-%% LOT
-\renewcommand{\cfttabfont}          {\usefont{T1}{qhv}{m}{n}\selectfont}		%% fonte entrée
-\renewcommand{\cfttabpagefont}      {\usefont{T1}{qhv}{m}{n}\selectfont}		%% fonte numéro de page
-\setlength{\cfttabindent}{0em}
-
-%% légendes des figures
-\renewcommand{\captionfont}         {\usefont{T1}{cmbr}{m}{n}\selectfont}		%% fonte légende
-\renewcommand{\captionlabelfont}    {\usefont{T1}{cmbr}{m}{n}\selectfont}		%% fonte étiquette légende
-
-\addto\captionsfrench{\renewcommand\listfigurename{Liste des figures}} 			%% titre de la table des figures
-
-%% notes de fin
-%\let\footnote=\endnote							%% passe les footnote en endnote (décommenter)
-\def\enoteheading{\chapter*{\notesname
-	\@mkboth{\MakeUppercase{\notesname}}{\MakeUppercase{\notesname}}}
-	\mbox{}\par\vskip-\baselineskip}
-\def\enotesize{\normalsize}

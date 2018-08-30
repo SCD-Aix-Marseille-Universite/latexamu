@@ -23,12 +23,12 @@
 	\chapter*{Remerciements}
 	\input{tex/remercie}
 	\addcontentsline{toc}{chapter}{Remerciements}
+
 %% désactive la protrusion localement (TOCLOFT NOMENCL)
     \microtypesetup{protrusion=false}
 %% TOC
 	\newpage
 	\pdfbookmark[0]{Table des matières}{tdm}
-	\tocloftpagestyle{plain}
 	\tableofcontents
 %% LOF
 	\listoffigures
@@ -65,15 +65,14 @@
 	\appendix
 %% bibliographie
 	\newpage
-	\phantomsection\addcontentsline{toc}{chapter}{Bibliographie}
 	\input{tex/biblio}
 %% index
 	\newpage
 	\printindex
 %% notes
 	\newpage
-	\phantomsection\addcontentsline{toc}{chapter}{Notes}
-	\theendnotes
+	%\phantomsection\addcontentsline{toc}{chapter}{Notes}
+	\printendnotes
 %% annexes
 	\setcounter{chapter}{0}
 	\renewcommand{\thesection}{\Alph{section}}

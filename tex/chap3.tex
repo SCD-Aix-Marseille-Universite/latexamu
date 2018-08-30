@@ -1,42 +1,46 @@
 \section{Modèles}
-\lipsum[11]\index{Nam dui ligula}
-\begin{table}[h!tbp]
-\begin{center}
-\begin{tabular}{c|*{5}{c}}
-0\\
-$c_2$    & $a_{21}$\\
-$c_3$    & $a_{31}$ & $a_{32}$\\
-$\vdots$ & $\vdots$ &           & $\ddots$\\
-$c_s$    & $a_{s1}$ & $a_{s2}$  & $\cdots$ & $a_{s,s - 1}$\\
-\hline
-         & $b_1$    & $b_2$     & $\cdots$ & $b_{s-1}$     & $b_s$\\
-\end{tabular}
-\end{center}
-\caption{Tableau de Butcher}
-\label{table:butcher}
-\end{table}
-\lipsum[2]\index{Nam dui ligula}
-\begin{table}[h!tbp]
-\begin{center}
-\begin{tabular}{|c | c | c |}
-\hline
-$\lambda$ (nm) & $(\alpha_{\lambda}/\alpha_{426,7})_{moy}$ & écart type \\
-\hline
-391,9 \& 392,1 & 0,12 & 0,01 \\
-588,9 \& 589,2 & 0,45 & 0,07 \\
-657,8 \& 658,3 & 6,70 & 0,06 \\
-711,3 & 0,16 & 0,01 \\
-711,6 & 0,15 & 0,01 \\
-712 & 0,31 & 0,02 \\
-\hline
-\end{tabular}
-\end{center}
-\caption[Valeur moyenne et écart type des rapports $\alpha_{\lambda}/\alpha_{426,7}$]{Valeur moyenne et écart type des rapports $\alpha_{\lambda}/\alpha_{426,7}$ mesurés pour les chocs plasma de la deuxième série.}
-\label{table:alpha}
-\end{table}
+
+	\lipsum[11]\index{Nam dui ligula}
+
+	%% tableau nécessitant des filets verticaux
+	\begin{table}[h!tbp]
+		\begin{center}
+			\begin{tabular}{c|*{5}{c}}
+			0\\
+			$c_2$    & $a_{21}$\\
+			$c_3$    & $a_{31}$ & $a_{32}$\\
+			$\vdots$ & $\vdots$ &           & $\ddots$\\
+			$c_s$    & $a_{s1}$ & $a_{s2}$  & $\cdots$ & $a_{s,s - 1}$\\
+			\hline
+			         & $b_1$    & $b_2$     & $\cdots$ & $b_{s-1}$     & $b_s$\\
+			\end{tabular}
+		\end{center}
+		\caption{Tableau de Butcher}
+		\label{table:butcher}
+	\end{table}
+
+	%% tableau avec booktabs (sans filets verticaux)
+	\begin{table}[h!tbp]
+		\begin{center}
+			\begin{tabular}{@{}lcc@{}} \toprule
+			$\lambda$ (nm) & $(\alpha_{\lambda}/\alpha_{426,7})_{moy}$ & écart type \\ \midrule
+			391,9 \& 392,1 & 0,12 & 0,01 \\
+			588,9 \& 589,2 & 0,45 & 0,07 \\
+			657,8 \& 658,3 & 6,70 & 0,06 \\
+			711,3 & 0,16 & 0,01 \\
+			711,6 & 0,15 & 0,01 \\
+			712 & 0,31 & 0,02 \\ \bottomrule
+			\end{tabular}
+		\end{center}
+		\caption[Valeur moyenne et écart type des rapports $\alpha_{\lambda}/\alpha_{426,7}$]{Valeur moyenne et écart type des rapports $\alpha_{\lambda}/\alpha_{426,7}$ mesurés pour les chocs plasma de la deuxième série.}
+		\label{table:alpha}
+	\end{table}
+
 \newpage
+
 \section{Articles}
-\fullcite{mohamed_clinical_2014}
-% avant d'intégrer un article dans votre thèse, consulter http://www.sherpa.ac.uk/romeo/ si vous souhaitez diffuser sur internet
-\includepdfset{pagecommand=\thispagestyle{scrheadings}} % ajoute la numérotation continue des pages aux fichiers pdf importés
-\includepdf[pages=-]{BMC-1471-2334-14-S2-O1.pdf}
+
+	\fullcite{mohamed_clinical_2014}
+	% avant d'intégrer un article dans votre thèse, consulter http://www.sherpa.ac.uk/romeo/ si vous souhaitez diffuser sur internet
+	\includepdfset{pagecommand=\thispagestyle{scrheadings}} % ajoute la numérotation continue des pages aux fichiers pdf importés
+	\includepdf[pages=-]{BMC-1471-2334-14-S2-O1.pdf}

@@ -1,6 +1,6 @@
 ## Compilation
 
-Install [TeX Live](http://www.tug.org/texlive/acquire-netinstall.html) in the usual way.
+Install [TeX Live](http://www.tug.org/texlive/acquire-netinstall.html) or [Texmaker](http://www.xm1math.net/texmaker/) in the usual way.
 
 ```bash
 pdflatex these
@@ -30,6 +30,7 @@ sub run_makeglossaries {
 }
 $clean_ext = "acn acr alg glg glo gls nlg nlo ntn xdy run.xml not bbl";
 ```
+<<<<<<< HEAD
 then compile with
 ```bash
 latexmk -pdf
@@ -37,6 +38,14 @@ latexmk -pdf
 and erase temp files with
 ```bash
 latexmk -c
+=======
+
+
+This script can be added to Texmaker by going to **Options > Configure Texmaker > Quick Build > User**
+and changing it to 
+```
+pdflatex %.tex | biber % | makeindex %.nlo -s nomencl.ist -o %.nls -t %.nlg | makeindex %.idx -s %.ist | pdflatex %.tex | pdflatex %.tex
+>>>>>>> master
 ```
 
 ## Contributing

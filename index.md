@@ -13,14 +13,11 @@ La distribution LaTeX utilisée/recommandée est la [TeX Live](http://www.tug.or
 
 * fichiers sources commentés
 * typographie européenne (KOMA-Script)
-* sommaire, glossaire et index
-* hyperliens dans le sommaire et l'index
-* signets dans le menu latéral Acrobat
+* sommaire, glossaires et index avec hyperliens
 * listes des figures et des tableaux
-* bibliographie et notes de fin
-* hyperliens aller-retour sur les citations et les notes de fin
+* bibliographie et notes de fin avec hyperliens
+* signets dans le paneau latéral gauche
 * titrage consistant sur tout le document
-* graisse moyenne pour la lecture sur écran
 * numérotation des pages et du PDF identique
 * numérotation continue sur les PDF insérés
 * PDF 1.5 conforme pour archivage pérenne au CINES

@@ -1,7 +1,8 @@
 ## Compilation
 
-Install [TeX Live](http://www.tug.org/texlive/acquire-netinstall.html) or [Texmaker](http://www.xm1math.net/texmaker/) in the usual way.
+Install [TeX Live](http://www.tug.org/texlive/acquire-netinstall.html) in the usual way.
 
+compile with
 ```bash
 pdflatex these
 biber these

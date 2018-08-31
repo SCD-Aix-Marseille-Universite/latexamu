@@ -38,14 +38,6 @@ latexmk -pdf
 and erase temp files with
 ```bash
 latexmk -c
-=======
-
-
-This script can be added to Texmaker by going to **Options > Configure Texmaker > Quick Build > User**
-and changing it to 
-```
-pdflatex %.tex | biber % | makeindex %.nlo -s nomencl.ist -o %.nls -t %.nlg | makeindex %.idx -s %.ist | pdflatex %.tex | pdflatex %.tex
->>>>>>> master
 ```
 
 ## Contributing

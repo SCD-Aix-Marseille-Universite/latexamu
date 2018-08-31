@@ -7,13 +7,13 @@
 %%% classe de base (KOMA-Script)
 \LoadClass{scrreprt}						%% classe report KOMA-Script
 \KOMAoptions{
-	paper=a4,
-	fontsize=12pt,
-	DIV=12,
-	BCOR=0mm,
-	twoside=off,
-	listof=totoc,
-	index=totoc
+	paper=a4,								%% taille du papier
+	fontsize=12pt,							%% taille de la police
+	DIV=12,									%% taille des marges
+	BCOR=0mm,								%% taille de la reliure
+	twoside=off,							%% recto-verso
+	listof=totoc,							%% LOFT dans la TOC
+	index=totoc								%% index dans la TOC
 	}
 
 \RequirePackage{lipsum}						%% lorem ipsum (exemple)
@@ -66,12 +66,11 @@
 \RequirePackage{biblatex}					%% gestion de la bibliographie avec biblatex
 \RequirePackage{enotez}						%% notes de fin
 \setenotez{
-	list-name=Notes,
-	totoc=chapter,
-	backref
+	list-name=Notes,						%% titre des notes
+	totoc=chapter,							%% niveau des notes dans la TOC
+	backref									%% hyperlien retour des notes
 	}
 \RequirePackage{imakeidx}					%% index
-%\RequirePackage[intoc]{nomencl}				%% nomenclature
 \RequirePackage[titles]{tocloft}			%% TOC LOF LOT
 
 \setcounter{secnumdepth}{3}					%% profondeur des sections numérotées
@@ -80,10 +79,10 @@
 \addbibresource{biblio.bib}					%% fichiers sources bibliographiques
 %\makenomenclature							%% génère la nomenclature
 \makeindex[									%% génère l'index
-	program=makeindex,
-	options=-s these,
-	columns=1,
-	intoc
+	program=makeindex,						%% compilateur
+	options=-s these,						%% paramètres
+	columns=1,								%% nombre de colonnes
+	intoc									%% index dans la TOC
 	]
 
 %%% mathématiques, physique, chimie (à adapter)
@@ -145,5 +144,3 @@
 
 %\renewcommand{\thefootnote}{\alph{footnote}}		%% format de numérotation des notes de bas de page (décommenter)
 %\let\footnote=\endnote								%% passe les footnote en endnote (décommenter)
-
-

@@ -30,7 +30,6 @@ sub run_makeglossaries {
 }
 $clean_ext = "acn acr alg glg glo gls nlg nlo ntn xdy run.xml not bbl";
 ```
-<<<<<<< HEAD
 then compile with
 ```bash
 latexmk -pdf

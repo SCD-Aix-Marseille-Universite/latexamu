@@ -37,8 +37,8 @@
 \RequirePackage{setspace}					%% modification de l'interligne
 
 \pagestyle{scrheadings}						%% style de page
-\addtokomafont{pagenumber}{\small\sffamily}			%% numéro de page en police sans-sérif (commenter)
-%\setkomafont{disposition}{\normalcolor\bfseries}	%% titrage en police sérif (décommenter)
+%\setkomafont{disposition}{\bfseries}		%% titrage en police sérif (décommenter)
+%\setkomafont{descriptionlabel}{\bfseries}	%% entrée des glossaires en police sérif (décommenter)
 
 %%% tableaux et figures
 \RequirePackage{float}						%% définit les objets flottants tels que les figures et tableaux
@@ -52,7 +52,7 @@
 \floatplacement{figure}{H}					%% placer une figure là où elle a été appelée
 \graphicspath{{fig/}}						%% chemin vers fichiers images
 
-%%% appareil de référence
+%%% appareil de référence (sauf glossaires)
 \PassOptionsToPackage{						%% options biblatex
 	backend=biber,							%% compilateur par défaut pour biblatex
 	maxnames=3,								%% nombre max. de noms auteurs
@@ -71,11 +71,14 @@
 	backref
 	}
 \RequirePackage{imakeidx}					%% index
-\RequirePackage[intoc]{nomencl}				%% nomenclature
+%\RequirePackage[intoc]{nomencl}				%% nomenclature
 \RequirePackage[titles]{tocloft}			%% TOC LOF LOT
 
+\setcounter{secnumdepth}{3}					%% profondeur des sections numérotées
+\setcounter{tocdepth}{2}					%% profondeur des sections dans la table des matières
+
 \addbibresource{biblio.bib}					%% fichiers sources bibliographiques
-\makenomenclature							%% génère la nomenclature
+%\makenomenclature							%% génère la nomenclature
 \makeindex[									%% génère l'index
 	program=makeindex,
 	options=-s these,
@@ -122,12 +125,19 @@
 	pdfauthor={Prénom NOM},
 	pdfsubject={Résumé},
 	pdfkeywords = {mot clé, keyword, ...},
-}
+	}
 
-%%% paramètres
-\setcounter{secnumdepth}{3}					%% profondeur des sections numérotées
-\setcounter{tocdepth}{2}					%% profondeur des sections dans la table des matières
-
+%%% glossaires
+\RequirePackage[
+	acronym,								%% liste des acronymes
+	xindy,									%% compilateur xindy
+	toc,									%% affichage dans la TOC
+	style=altlist							%% affichage des entrées
+	]
+	{glossaries}							%% glossaires (charger le package glossaries après le package hyperref)
+\newglossary[nlg]{notation}{not}{ntn}{Nomenclature} % Création d'un type de glossaire 'notation'
+\makeglossaries								%% génère les glossaires
+\loadglsentries{tex/gloss}					%% fichiers sources glossaires
 
 %%% commandes personnelles
 \newcommand{\langue}{\emph}					%% mots en langues étrangères en italique

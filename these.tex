@@ -33,12 +33,13 @@
 %% LOF
 	\listoffigures
 %% LOT
-	\begingroup % permet de garder la LOF et la LOT sur la même page
-	\let\clearpage\relax
 	\listoftables
-	\endgroup
 %% Nomenclature
-	\input{tex/nomenclature}
+	%\input{tex/nomenclature}
+		% Liste des acronymes, glossaire et liste des symboles (dans l'ordre)		
+		\printglossary[type=\acronymtype , title={Liste des acronymes}, toctitle={Liste des acronymes}]
+		\printglossary[title=Glossaire,toctitle=Glossaire]
+		\printglossary[type=notation,title={Nomenclature}, toctitle={Nomenclature}]
 %% rétabli la protrusion
     \microtypesetup{protrusion=true}
 

@@ -2,47 +2,50 @@
 
 \begin{document}
 
-%% page de titre
+										%% page de titre
 	\chead{}
 	\pdfbookmark[0]{Page de titre}{titre}
 	\input{tex/titre.tex}
-%% licence
+										%% licence
 	\newpage
 	\thispagestyle{empty}
 	\input{tex/licence}
-%% résumé
-	\chapter*{Résumé}
+
+
+	\chapter*{Résumé}					%% résumé
 	\input{tex/resume}
 	\addcontentsline{toc}{chapter}{Résumé}
-%% abstract
-	\chapter*{Abstract}
+
+	\chapter*{Abstract}					%% abstract
 	\input{tex/abstract}
 	\addcontentsline{toc}{chapter}{Abstract}
-%% remerciement
-	\chapter*{Remerciements}
+
+	\chapter*{Remerciements}			%% remerciements
 	\input{tex/remercie}
 	\addcontentsline{toc}{chapter}{Remerciements}
 
-%% désactive la protrusion localement (TOCLOFT NOMENCL)
-    \microtypesetup{protrusion=false}
-%% TOC
-	\newpage
-	\pdfbookmark[0]{Table des matières}{tdm}
-	\tableofcontents
-%% LOF
-	\listoffigures
-%% LOT
-	\listoftables
-%% Nomenclature
-	%\input{tex/nomenclature}
-		% Liste des acronymes, glossaire et liste des symboles (dans l'ordre)		
-		\printglossary[type=\acronymtype , title={Liste des acronymes}, toctitle={Liste des acronymes}]
-		\printglossary[title=Glossaire,toctitle=Glossaire]
-		\printglossary[type=notation,title={Nomenclature}, toctitle={Nomenclature}]
-%% rétabli la protrusion
-    \microtypesetup{protrusion=true}
 
-%%%% corps
+    \microtypesetup{protrusion=false}	%% désactive la protrusion (TOC LOFT GLS)
+	\tableofcontents					%% TOC
+	\listoffigures						%% LOF
+	\listoftables						%% LOT
+	\printglossary[						%% Acronymes
+		type=\acronymtype,
+		title={Liste des acronymes},
+		toctitle={Liste des acronymes}
+		]
+	\printglossary[						%% Glossaire
+		title={Glossaire},
+		toctitle={Glossaire}
+		]
+	\printglossary[						%% Nomenclature
+		type=notation,
+		title={Nomenclature},
+		toctitle={Nomenclature}
+		]
+    \microtypesetup{protrusion=true}	%% rétabli la protrusion
+
+
 	\chapter*{Introduction}
 	\input{tex/intro}
 	\addcontentsline{toc}{chapter}{Introduction}
@@ -59,24 +62,26 @@
 	\chapter*{Conclusion}
 	\input{tex/conc}
 	\addcontentsline{toc}{chapter}{Conclusion}
-%%%%
 
 	\appendix
-%% bibliographie
+
 	\newpage
-	\input{tex/biblio}
-%% index
+	\printbibliography[					%% bibliographie
+	heading=bibintoc
+	]	
 	\newpage
-	\printindex
-%% notes
+	\printindex							%% index
 	\newpage
-	\printendnotes
+	\printendnotes						%% notes
+
 %% annexes
 	\setcounter{chapter}{0}
 	\renewcommand{\thesection}{\Alph{section}}
+	
 	\chapter*{ANNEXES}
 	\newpage
 	\addcontentsline{toc}{chapter}{ANNEXES}
+	
 	\input{tex/annexe1}
 	\newpage
 	\input{tex/annexe2}

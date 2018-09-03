@@ -71,7 +71,9 @@
 	backref									%% hyperlien retour des notes
 	}
 \RequirePackage{imakeidx}					%% index
-\RequirePackage[titles]{tocloft}			%% TOC LOF LOT
+\RequirePackage[titles]{tocloft}			%% fonctions pour TOC LOF LOT
+\RequirePackage{tocbasic}					%% fonctions pour TOC
+\setuptoc{toc}{totoc}						%% ajoute la TOC à la TOC
 
 \setcounter{secnumdepth}{3}					%% profondeur des sections numérotées
 \setcounter{tocdepth}{2}					%% profondeur des sections dans la table des matières

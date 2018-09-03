@@ -16,7 +16,7 @@ La distribution LaTeX utilisée/recommandée est la [TeX Live](http://www.tug.or
 * sommaire, glossaires et index avec hyperliens
 * listes des figures et des tableaux
 * bibliographie et notes de fin avec hyperliens
-* signets dans le paneau latéral gauche
+* signets dans le panneau latéral gauche
 * titrage consistant sur tout le document
 * numérotation des pages et du PDF identique
 * numérotation continue sur les PDF insérés

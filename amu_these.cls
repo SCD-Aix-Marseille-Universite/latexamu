@@ -84,7 +84,6 @@
 \setcounter{tocdepth}{2}					%% profondeur des sections dans la table des matières
 
 \addbibresource{biblio.bib}					%% fichiers sources bibliographiques
-%\makenomenclature							%% génère la nomenclature
 \makeindex[									%% génère l'index
 	program=makeindex,						%% compilateur
 	options=-s these,						%% paramètres

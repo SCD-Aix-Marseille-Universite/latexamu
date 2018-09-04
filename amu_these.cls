@@ -72,8 +72,13 @@
 	}
 \RequirePackage{imakeidx}					%% index
 \RequirePackage[titles]{tocloft}			%% fonctions pour TOC LOF LOT
-\RequirePackage{tocbasic}					%% fonctions pour TOC
+\RequirePackage{etoc}						%% fonctions pour TOC locale
 \setuptoc{toc}{totoc}						%% ajoute la TOC à la TOC
+\newcommand{\chaptertoc}[1][Sommaire]{		%% définit une commande pour la TOC locale (Sommaire)
+	\etocsetnexttocdepth{3}					%% profondeur de la TOC locale
+	\etocsettocstyle{\addsec*{#1}}{}
+	\localtableofcontents
+}
 
 \setcounter{secnumdepth}{3}					%% profondeur des sections numérotées
 \setcounter{tocdepth}{2}					%% profondeur des sections dans la table des matières

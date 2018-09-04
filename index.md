@@ -13,9 +13,10 @@ La distribution LaTeX utilisée/recommandée est la [TeX Live](http://www.tug.or
 
 * fichiers sources commentés
 * typographie européenne (KOMA-Script)
-* sommaire, glossaires et index avec hyperliens
-* listes des figures et des tableaux
-* bibliographie et notes de fin avec hyperliens
+* tables des matières, sommaires par chapitre (hyperliens)
+* glossaires, nomenclature et index (hyperliens)
+* listes des figures et des tableaux (hyperliens)
+* bibliographie et notes de fin (hyperliens)
 * signets dans le panneau latéral gauche
 * titrage consistant sur tout le document
 * numérotation des pages et du PDF identique

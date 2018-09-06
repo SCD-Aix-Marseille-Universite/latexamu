@@ -60,6 +60,7 @@
 	sorting=nyt,							%% trier par nom, année, titre
 	citestyle=authoryear,					%% style de citation auteur-année
 	bibstyle=alphabetic,					%% style de bibliographie alphabétique
+%	bibstyle=iso-authoryear,				%% style de bibliographie ISO 690
 	backref=true							%% liens retour des références (cf. p.)
 	}
 	{biblatex}
@@ -72,12 +73,12 @@
 	}
 \RequirePackage{imakeidx}					%% index
 \RequirePackage[titles]{tocloft}			%% fonctions pour TOC LOF LOT
-\RequirePackage{etoc}						%% fonctions pour TOC locale
+\RequirePackage{etoc}						%% fonctions pour TOC locale (préférable à minitoc avec KOMA-Script)
 \setuptoc{toc}{totoc}						%% ajoute la TOC à la TOC
-\newcommand{\chaptertoc}[1][Sommaire]{		%% définit une commande pour la TOC locale (Sommaire)
-	\etocsetnexttocdepth{3}					%% profondeur de la TOC locale
-	\etocsettocstyle{\addsec*{#1}}{}
-	\localtableofcontents
+\newcommand{\chaptertoc}[1][Sommaire]{%		%% définit une commande pour la TOC locale (Sommaire)
+	\etocsetnexttocdepth{3}%				%% profondeur de la TOC locale
+	\etocsettocstyle{\addsec*{#1}}{}%
+	\localtableofcontents%
 }
 
 \setcounter{secnumdepth}{3}					%% profondeur des sections numérotées
@@ -147,6 +148,9 @@
 %%% commandes personnelles
 \newcommand{\langue}{\emph}					%% mots en langues étrangères en italique
 \newcommand{\citital}{\emph}				%% citation en italique
+
+\newcommand{\acc}{\ensuremath{\omega ^{2}=\omega ^{2}_{0}+2\alpha \theta}\xspace}
+\newcommand{\emiss}[2][]{\ensuremath{\varepsilon_{#2}^{#1}}\xspace}
 
 %\renewcommand{\thefootnote}{\alph{footnote}}		%% format de numérotation des notes de bas de page (décommenter)
 %\let\footnote=\endnote								%% passe les footnote en endnote (décommenter)

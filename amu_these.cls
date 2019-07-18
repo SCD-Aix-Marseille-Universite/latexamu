@@ -43,6 +43,8 @@
 %%% tableaux et figures
 \RequirePackage{float}						%% définit les objets flottants tels que les figures et tableaux
 \RequirePackage{graphicx}					%% graphiques et figures
+\RequirePackage[export]{adjustbox}			%% permet de définir une taille minimale ou maximale
+\RequirePackage{subfig}						%% figures multiples
 \RequirePackage{caption}					%% légendes des figures
 \RequirePackage{tabularx}					%% tableaux
 \RequirePackage{multirow}					%% fusion des lignes dans les tableaux 
@@ -72,7 +74,7 @@
 	backref									%% hyperlien retour des notes
 	}
 \RequirePackage{imakeidx}					%% index
-\RequirePackage[titles]{tocloft}			%% fonctions pour TOC LOF LOT
+\RequirePackage[titles,subfigure]{tocloft}	%% fonctions pour TOC LOF LOT
 \RequirePackage{etoc}						%% fonctions pour TOC locale (préférable à minitoc avec KOMA-Script)
 \setuptoc{toc}{totoc}						%% ajoute la TOC à la TOC
 \newcommand{\chaptertoc}[1][Sommaire]{%		%% définit une commande pour la TOC locale (Sommaire)

@@ -8,11 +8,14 @@
     <link href="https://fonts.googleapis.com/css?family=Titillium+Web:400,700" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+    <link rel="shortcut icon" href="https://assets-brew.appspot.com/static/favicon.ico">
   </head>
   <body>
     <section class="page-header">
       <img src="/latexamu/assets/img/amu.png">
-      <h1 class="project-name">{{ site.title | default: site.github.repository_name }}</h1>
+      <h1 class="project-name"></h1>
+      <img src="/lama-addons/assets/img/latex.png" style="width: 400px;">
+      <h1 class="project-name"></h1>
       <h2 class="project-tagline">{{ site.description | default: site.github.project_tagline }}</h2>
       {% if site.show_downloads %}
         <a href="https://github.com/SCD-Aix-Marseille-Universite/latexamu/zipball/master" class="btn">Télécharger .zip</a>

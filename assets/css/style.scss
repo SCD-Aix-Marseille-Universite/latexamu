@@ -3,51 +3,43 @@
 
 @import "{{ site.theme }}";
 
+body {
+    font-family: "Titillium Web", sans-serif;
+}
+
+a {
+    color: #00558a;
+}
+
+h1 {
+    font-size: 1.75rem;
+    line-height: 4rem;
+    letter-spacing: 2px;
+}
+
+h2 {
+    font-size: 1.75rem;
+    line-height: 2rem;
+    letter-spacing: 2px;
+}
+
+h3 {
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    letter-spacing: 2px;
+}
+
+p {
+    max-width: 60em;
+    font-size: 1.1rem;
+    line-height: 1.5rem;
+}
+
+.main-content h1, .main-content h2, .main-content h3, .main-content h4, .main-content h5, .main-content h6 {
+    font-family: "Titillium Web", sans-serif;
+    color: #00558a;
+}
+
 .page-header {
-    background-color: #155799;
-    background-image: -webkit-linear-gradient(left,
-    #FF8800,
-    #FF8800 14.285%,
-    #FBBA00 14.285%,
-    #FBBA00 28.57%,
-    #7CB61F 28.57%,
-    #7CB61F 42.855%,
-    #22BBEA 42.855%,
-    #22BBEA 57.14%,
-    #0071B9 57.14%,
-    #0071B9 71.425%,
-    #5943FF 71.425%,
-    #5943FF 85.71%,
-    #B243FF 85.71%) !important;
-    background-image: -ms-linear-gradient(left,
-    #FF8800,
-    #FF8800 14.285%,
-    #FBBA00 14.285%,
-    #FBBA00 28.57%,
-    #7CB61F 28.57%,
-    #7CB61F 42.855%,
-    #22BBEA 42.855%,
-    #22BBEA 57.14%,
-    #0071B9 57.14%,
-    #0071B9 71.425%,
-    #5943FF 71.425%,
-    #5943FF 85.71%,
-    #B243FF 85.71%) !important;
-    background-image: linear-gradient(to right,
-    #FF8800,
-    #FF8800 14.285%,
-    #FBBA00 14.285%,
-    #FBBA00 28.57%,
-    #7CB61F 28.57%,
-    #7CB61F 42.855%,
-    #22BBEA 42.855%,
-    #22BBEA 57.14%,
-    #0071B9 57.14%,
-    #0071B9 71.425%,
-    #5943FF 71.425%,
-    #5943FF 85.71%,
-    #B243FF 85.71%) !important;
-    background-size: 100% 3px !important;
-    background-position: 50% 100% !important;
-    background-repeat: no-repeat !important;
-    }
+    background-image: linear-gradient(120deg, #BB3430, #C15F9C) !important;
+}

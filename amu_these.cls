@@ -156,3 +156,8 @@
 
 %\renewcommand{\thefootnote}{\alph{footnote}}		%% format de numérotation des notes de bas de page (décommenter)
 %\let\footnote=\endnote								%% passe les footnote en endnote (décommenter)
+
+%\renewcommand*{\sfdefault}{phv} % sélectionne la fonte Helvetica pour tout le sans sérif (décommenter)
+%\renewcommand*{\rmdefault}{bch} % sélectionne la fonte Charter pour tout le sérif sauf les mathématiques (décommenter)
+
+%\renewcommand{\familydefault}{\sfdefault} % passe à l'utilisation du sans-serif pour tout sauf les mathématiques (décommenter : vivement déconseillé)

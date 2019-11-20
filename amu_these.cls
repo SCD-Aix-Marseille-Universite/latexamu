@@ -1,8 +1,8 @@
 %
 % Aix-Marseille Université <@univ-amu.fr>
-% Version 0.3 released 01/03/2017
+% Version 0.7 released 20/11/2019
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{amu_these}[2012/07/01 Classe personnelle, V0.2]
+\ProvidesClass{amu_these}[2019/11/20 Classe personnelle, V0.7]
 
 %%% classe de base (KOMA-Script)
 \LoadClass{scrreprt}						%% classe report KOMA-Script
@@ -28,7 +28,10 @@
 
 %%% typographie et mise en page
 \RequirePackage{scrhack}					%% macros personnalisées (KOMA-Script)
-\RequirePackage{scrlayer-scrpage}			%% en-tête/pied de page personnalisés (KOMA-Script)
+\RequirePackage[
+	automark,								%% rappel du titre de chapître en en-tête
+	autooneside=false						%% nécessaire pour le rappel du chapître et de la partie en en-tête
+	]{scrlayer-scrpage}						%% en-tête/pied de page personnalisés (KOMA-Script)
 \RequirePackage{textcomp}					%% symboles complémentaires
 \RequirePackage{hyphenat}					%% césure explicite
 \RequirePackage{microtype}					%% microtypographie
@@ -100,10 +103,13 @@
 \RequirePackage{amsfonts}					%% polices mathématiques
 
 \RequirePackage{xspace}
-\RequirePackage{nicefrac}		% Fractions 'inline'
-
-\PassOptionsToPackage{load-configurations=abbreviations}{siunitx}
+\RequirePackage{nicefrac}					%% fractions en ligne
 \RequirePackage{siunitx}					%% unités du système international
+\sisetup{									%% options pour les unités
+	output-decimal-marker = {,},
+	output-exponent-marker = {.},
+	separate-uncertainty = true
+	}
 \PassOptionsToPackage{version=4}{mhchem}
 \RequirePackage{mhchem}						%% chimie
 
@@ -147,13 +153,14 @@
 \makeglossaries								%% génère les glossaires
 \loadglsentries{tex/gloss}					%% fichiers sources glossaires
 
-%%% commandes personnelles
+%%% commandes personnelles (macros)
 \newcommand{\langue}{\emph}					%% mots en langues étrangères en italique
 \newcommand{\citital}{\emph}				%% citation en italique
 
 \newcommand{\acc}{\ensuremath{\omega ^{2}=\omega ^{2}_{0}+2\alpha \theta}\xspace}
 \newcommand{\emiss}[2][]{\ensuremath{\varepsilon_{#2}^{#1}}\xspace}
 
+%%% reconfigurations personnelles
 %\renewcommand{\thefootnote}{\alph{footnote}}		%% format de numérotation des notes de bas de page (décommenter)
 %\let\footnote=\endnote								%% passe les footnote en endnote (décommenter)
 

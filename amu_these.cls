@@ -2,7 +2,7 @@
 % Aix-Marseille Université <@univ-amu.fr>
 % Version 0.7 released 20/11/2019
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{amu_these}[2019/11/20 Classe personnelle, V0.7]
+\ProvidesClass{amu_these}[2019/11/20 Classe personnelle, V0.8]
 
 %%% classe de base (KOMA-Script)
 \LoadClass{scrreprt}						%% classe report KOMA-Script
@@ -50,12 +50,16 @@
 \RequirePackage{subfig}						%% figures multiples
 \RequirePackage{caption}					%% légendes des figures
 \RequirePackage{tabularx}					%% tableaux
-\RequirePackage{multirow}					%% fusion des lignes dans les tableaux 
+\RequirePackage{multirow}					%% fusion des cellules dans les tableaux 
+\RequirePackage{makecell}					%% sauts des lignes dans les cellules	
+\RequirePackage{fourier}					%% fusion des lignes dans les tableaux 
 \RequirePackage{array}						%% amélioration des tableaux
 \RequirePackage{booktabs}					%% tables formelles
+\RequirePackage{tikz}						%% figures en code natif
+\usetikzlibrary{decorations.markings}
 
 \floatplacement{figure}{H}					%% placer une figure là où elle a été appelée
-\graphicspath{{fig/}}						%% chemin vers fichiers images
+\graphicspath{{fig/}{logo/}}				%% chemins vers fichiers images
 
 %%% appareil de référence (sauf glossaires)
 \PassOptionsToPackage{						%% options biblatex
@@ -102,16 +106,21 @@
 \RequirePackage{amssymb}					%% symboles mathématiques
 \RequirePackage{amsfonts}					%% polices mathématiques
 
-\RequirePackage{xspace}
-\RequirePackage{nicefrac}					%% fractions en ligne
+\RequirePackage{xspace}						%% gestions des espaces dans les macros
+\RequirePackage{xparse}						%% macros avancées
+\RequirePackage{nicefrac}					%% fractions en ligne (voir aussi xfrac)
 \RequirePackage{siunitx}					%% unités du système international
 \sisetup{									%% options pour les unités
+	list-final-separator = { \translate{and} },	
+	list-pair-separator  = { \translate{and} },
 	output-decimal-marker = {,},
 	output-exponent-marker = {.},
 	separate-uncertainty = true
 	}
 \PassOptionsToPackage{version=4}{mhchem}
 \RequirePackage{mhchem}						%% chimie
+
+\RequirePackage{physics}					%% physique
 
 %%% PDF
 \RequirePackage{pdfpages}					%% insertion de pdf
@@ -159,6 +168,27 @@
 
 \newcommand{\acc}{\ensuremath{\omega ^{2}=\omega ^{2}_{0}+2\alpha \theta}\xspace}
 \newcommand{\emiss}[2][]{\ensuremath{\varepsilon_{#2}^{#1}}\xspace}
+
+\definecolor{blueamu}{RGB}{0, 101, 189}
+\definecolor{cyanamu}{RGB}{61, 183, 228}
+
+\newcommand{\dhorline}[3][0]{%
+    \tikz[baseline=-2pt]{\path[decoration={markings, 
+      mark=between positions 0 and 1 step 2*#3
+      with {\node[color=blueamu, fill, circle, minimum width=#3, inner sep=0pt, anchor=south west] {};}},postaction={decorate}]  (0,#1) -- ++(#2,0);}}
+\newcommand{\dvertline}[3][0]{%
+    \tikz[baseline=2em]{\path[decoration={markings,
+      mark=between positions 0 and 1 step 2*#2
+      with {\node[color=black!50, fill, circle, minimum width=#2, inner sep=0pt, anchor=south west] {};}},postaction={decorate}] (0, #1) -- ++(0,#3);}}
+
+\newcommand\titel[1]{{\usefont{T1}{tit}{el}{n} #1 }}
+\newcommand\titl[1]{{\usefont{T1}{tit}{l}{n} #1 }}
+\newcommand\titm[1]{{\usefont{T1}{tit}{m}{n} #1 }}
+\newcommand\titsb[1]{{\usefont{T1}{tit}{sb}{n} #1 }}
+\newcommand\titb[1]{{\usefont{T1}{tit}{b}{n} #1 }}
+\makeatletter\newcommand\HUGE{\@setfontsize\Huge{28}{0}}\makeatother
+
+\addto\captionsfrench{\def\tablename{Tableau}}		%% renomme Table en Tableau dans les légendes
 
 %%% reconfigurations personnelles
 %\renewcommand{\thefootnote}{\alph{footnote}}		%% format de numérotation des notes de bas de page (décommenter)

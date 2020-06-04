@@ -1,0 +1,12 @@
+\ProvidesFile{t1tit.fd}
+\DeclareFontFamily{T1}{tit}{}
+\DeclareFontShape{T1}{tit}{el}{n}{ <-> fonts/Titillium-ExtraLight}{}
+\DeclareFontShape{T1}{tit}{l}{n}{ <-> fonts/Titillium-Light}{}
+\DeclareFontShape{T1}{tit}{m}{n}{ <-> fonts/Titillium-Regular}{}
+\DeclareFontShape{T1}{tit}{sb}{n}{ <-> fonts/Titillium-SemiBold}{}
+\DeclareFontShape{T1}{tit}{b}{n}{ <-> fonts/Titillium-Bold}{}
+\pdfmapline{+Titillium-ExtraLight <fonts/Titillium-ExtraLight.ttf <T1-WGL4.enc}
+\pdfmapline{+Titillium-Light <fonts/Titillium-Light.ttf <T1-WGL4.enc}
+\pdfmapline{+Titillium-Regular <fonts/Titillium-Regular.ttf <T1-WGL4.enc}
+\pdfmapline{+Titillium-SemiBold <fonts/Titillium-SemiBold.ttf <T1-WGL4.enc}
+\pdfmapline{+Titillium-Bold <fonts/Titillium-Bold.ttf <T1-WGL4.enc}

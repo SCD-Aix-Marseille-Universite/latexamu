@@ -1,8 +1,8 @@
 %
 % Aix-Marseille Université <@univ-amu.fr>
-% Version 0.7 released 20/11/2019
+% Version 0.9 released 04/06/2020
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{amu_these}[2019/11/20 Classe personnelle, V0.8]
+\ProvidesClass{amu_these}[2020/06/04 Classe personnelle, V0.9]
 
 %%% classe de base (KOMA-Script)
 \LoadClass{scrreprt}						%% classe report KOMA-Script

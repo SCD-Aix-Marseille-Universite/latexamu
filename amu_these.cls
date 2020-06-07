@@ -22,7 +22,7 @@
 \RequirePackage[utf8]{inputenc}				%% encodage du texte
 \RequirePackage[TS1,T1]{fontenc}			%% encodage des fontes
 \RequirePackage{lmodern}					%% polices latines
-\RequirePackage[english,french]{babel}		%% typographie (français par défaut)
+\RequirePackage[english,main=french]{babel}	%% typographie (français par défaut)
 \RequirePackage[babel]{csquotes}			%% guillemets typographiques
 \MakeAutoQuote{«}{»}						%% espacement automatique des guillemets
 
@@ -114,7 +114,7 @@
 	list-final-separator = { \translate{and} },	
 	list-pair-separator  = { \translate{and} },
 	output-decimal-marker = {,},
-	output-exponent-marker = {.},
+	exponent-product = {\cdot},
 	separate-uncertainty = true
 	}
 \PassOptionsToPackage{version=4}{mhchem}
@@ -169,6 +169,7 @@
 \newcommand{\acc}{\ensuremath{\omega ^{2}=\omega ^{2}_{0}+2\alpha \theta}\xspace}
 \newcommand{\emiss}[2][]{\ensuremath{\varepsilon_{#2}^{#1}}\xspace}
 
+%%% commandes pour la page de titre
 \definecolor{blueamu}{RGB}{0, 101, 189}
 \definecolor{cyanamu}{RGB}{61, 183, 228}
 
@@ -188,9 +189,9 @@
 \newcommand\titb[1]{{\usefont{T1}{tit}{b}{n} #1 }}
 \makeatletter\newcommand\HUGE{\@setfontsize\Huge{28}{0}}\makeatother
 
+%%% reconfigurations personnelles
 \addto\captionsfrench{\def\tablename{Tableau}}		%% renomme Table en Tableau dans les légendes
 
-%%% reconfigurations personnelles
 %\renewcommand{\thefootnote}{\alph{footnote}}		%% format de numérotation des notes de bas de page (décommenter)
 %\let\footnote=\endnote								%% passe les footnote en endnote (décommenter)
 
@@ -198,3 +199,6 @@
 %\renewcommand*{\rmdefault}{bch} % sélectionne la fonte Charter pour tout le sérif sauf les mathématiques (décommenter)
 
 %\renewcommand{\familydefault}{\sfdefault} % passe à l'utilisation du sans-serif pour tout sauf les mathématiques (décommenter : vivement déconseillé)
+
+\renewcommand{\ifstr}{\Ifstr}               %% supprime les 'warnings' des packages non mis à jour
+\renewcommand{\iftocfeature}{\Iftocfeature} %% selon les recommendations de The LaTeX Project Team

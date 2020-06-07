@@ -1,56 +1,118 @@
-{\fontfamily{qhv}\selectfont
-\vspace*{-2cm}
+\newgeometry{margin=2em}
+
 \begin{center}
-	\begin{minipage}[c]{0.70\linewidth}
-		\raggedright\includegraphics[height=1.5cm]{logo_amu_excellence}\quad\includegraphics[height=1.5cm]{logo_cotutelle-std}
+	\begin{minipage}[c]{.5\linewidth}
+		\raggedright\includegraphics[height=7em]{logo_amu_excellence}
 	\end{minipage}\hfill
-	\begin{minipage}[c]{0.30\linewidth}
-		\raggedleft\includegraphics[height=1.5cm]{logo_partenaire-std}
+	\begin{minipage}[c]{.5\linewidth}
+		%\raggedleft\includegraphics[height=7em]{example-image-b} %% logo cotutelle
 	\end{minipage}\hfill
 \end{center}
-\begin{flushleft}
-	\vspace{0.2cm}
-	\LARGE Aix-Marseille Université\\
-	\LARGE\textcolor{black!50}{Établissement en cotutelle}\\
-	%\vspace{0.2cm}
-	\Large École doctorale\\
-	\vspace{0.2cm}
-	\normalsize\textcolor{black!50}{Partenaires de recherche}\\
-	\vspace{0.2cm}
-	Laboratoire/Unité de recherche\\
-    \begin{center}
-		\vspace{1.8cm}
-		Thèse présentée pour obtenir le grade universitaire de docteur\\
-    \end{center}
-	\vspace{0.5cm}
-    Discipline: indiquer la mention du doctorat (intitulés en annexe)\\
-    Spécialité: indiquer la spécialité s'il y a lieu (intitulés en annexe)\\
-    \begin{center}
-        \vspace{0.5cm}
-        \Large Prénom NOM\\
-        \vspace{1cm}
-				\large Titre de la thèse: sous-titre de la thèse\\
-				\vspace{0.5cm}
-				\selectlanguage{english}\normalsize Thesis title: thesis subtitle\\\selectlanguage{french}
-    \end{center}
-	\vspace{3.4cm}
-    \normalsize Soutenue le JJ/MM/AAAA devant le jury composé de:\\
-\end{flushleft}
-\vspace{0.4cm}
-\begin{tabular}{lll}
-	Prénom NOM & Affiliation & Rapporteur \\
-    \vspace{0.08cm}
-	Prénom NOM & Affiliation & Rapporteur \\
-    \vspace{0.08cm}
-	Prénom NOM & Affiliation & Examinateur \\
-    \vspace{0.08cm}
-	Prénom NOM & Affiliation & Examinateur \\
-    \vspace{0.08cm}
-	Prénom NOM & Affiliation & Examinateur \\
-    \vspace{0.08cm}
-	Prénom NOM & Affiliation & Directeur de thèse \\
-\end{tabular}
 
-\vspace{0.4cm}
-\begin{flushleft}\normalsize Numéro national de thèse/suffixe local: 2019AIXM0001/001ED62\\\end{flushleft}
-}
+\vspace{1em}
+
+\begin{center}
+	\begin{minipage}[c]{.63\linewidth}
+		\dhorline{\textwidth}{4pt}
+	\end{minipage}\hfill
+	\begin{minipage}[c]{.35\linewidth}
+		\raggedleft\titl{NNT/NL : 2020AIXM0001/001ED000}
+		% renseigner votre numéro national de thèse (NNT) et le numéro local (NL)
+		% ils sont indiqués sur la page d'informations administratives de votre espace de dépôt dans le guichet de dépôt légal des thèses AMU lorque votre date de soutenance est renseignée par votre service de scolarité
+		% https://depot-theses.univ-amu.fr/
+	\end{minipage}\hfill
+\end{center}
+
+%\vspace{1em}
+
+\doublespacing
+\begin{flushleft}
+    \titb{\HUGE\textcolor{cyanamu}{THÈSE DE DOCTORAT}}\\
+	\titl{\Large Soutenue à Aix-Marseille Université}\\
+	%\titl{\Large dans le cadre d'une cotutelle avec }\\
+	\titl{\Large le 10 janvier 2020 par}\\
+\end{flushleft}
+\vspace{2em}
+\begin{center}
+	\titsb{\Huge Prénom NOM}\\
+    \vspace{1em}
+	\titm{\LARGE Titre de la thèse:\\ sous-titre de la thèse}\\
+\end{center}
+\singlespacing
+
+\vspace{4em}
+
+\begin{center}
+	\begin{minipage}[t]{.45\linewidth}
+    	    \vspace{.5em}
+        	\titb{Discipline}
+        	
+        	\titl{renseigner la discipline du doctorat (\hyperref[chap:doctorats]{Annexe A})}
+        	
+    	    \vspace{1em}
+        	\titb{Spécialité}
+        	
+        	\titl{renseigner la spécialité du doctorat (\hyperref[chap:doctorats]{Annexe A})}
+        	
+    	    \vspace{2em}
+        	\titb{École doctorale}
+        	
+        	\titl{renseigner l'école doctorale (\hyperref[chap:doctorats]{Annexe A})}
+        	
+    	    \vspace{1em}
+        	\titb{Laboratoire/Partenaires de recherche}
+        	
+        	\titl{renseigner les partenaires institutionnels
+        	
+        	et les partenaires privés
+        	
+        	un partenaire par ligne
+        	}
+	\end{minipage}\hfill
+	\begin{minipage}[t]{.03\linewidth}
+	    \dvertline{4pt}{-16em}
+	\end{minipage}\hfill
+	\begin{minipage}[t]{.52\linewidth}
+	    \vspace{.5em}
+    	\titb{\small Composition du jury}
+
+	    \vspace{1em}
+    	\titel{
+        \begin{tabular}{p{12em} p{9.5em}}
+        	Prénom NOM & Rapporteur·e \\
+        	Affiliation \\
+        	\\
+        	Prénom NOM & Rapporteur·e \\
+        	Affiliation \\
+            \\
+            Prénom NOM & Examinateur·rice \\
+        	Affiliation \\
+            \\
+        	Prénom NOM & Président·e du jury \\
+        	Affiliation \\
+            \\
+        	Prénom NOM & Directeur·rice de thèse \\
+        	Affiliation \\
+        \end{tabular}
+        }
+	\end{minipage}\hfill
+\end{center}       
+
+\vspace{2em}
+
+\begin{center} %% logos partenaires
+	\begin{minipage}[c]{.25\linewidth}
+		\centering\includegraphics[height=5em]{example-image-a} 
+	\end{minipage}\hfill
+	\begin{minipage}[c]{.25\linewidth}
+		\centering\includegraphics[height=5em]{example-image-b}
+	\end{minipage}\hfill
+	\begin{minipage}[c]{.25\linewidth}
+		\centering\includegraphics[height=5em]{example-image-c} 
+	\end{minipage}\hfill
+	\begin{minipage}[c]{.25\linewidth}
+		\centering\includegraphics[height=5em]{example-image-c}
+	\end{minipage}\hfill
+\end{center}
+
+\restoregeometry

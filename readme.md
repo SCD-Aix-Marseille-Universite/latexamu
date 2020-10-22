@@ -40,7 +40,7 @@ and erase temp files with
 latexmk -c
 ```
 
-## Title page only
+## Title pages only
 
 [Download title pages only](https://github.com/SCD-Aix-Marseille-Universite/latexamu-intro).
 

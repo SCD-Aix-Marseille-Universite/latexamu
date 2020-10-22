@@ -40,6 +40,10 @@ and erase temp files with
 latexmk -c
 ```
 
+## Title page only
+
+[Download the version with introductory pages only](https://github.com/SCD-Aix-Marseille-Universite/latexamu-intro).
+
 ## Contributing
 
 [Bug reports and pull requests are welcome on GitHub](https://github.com/SCD-Aix-Marseille-Universite/latexamu).

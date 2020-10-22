@@ -42,7 +42,7 @@ latexmk -c
 
 ## Title page only
 
-[Download the version with introductory pages only](https://github.com/SCD-Aix-Marseille-Universite/latexamu-intro).
+[Download title pages only](https://github.com/SCD-Aix-Marseille-Universite/latexamu-intro).
 
 ## Contributing
 

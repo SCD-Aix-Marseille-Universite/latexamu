@@ -21,7 +21,8 @@
 %%% extensions minimales
 \RequirePackage[utf8]{inputenc}				%% encodage du texte
 \RequirePackage[TS1,T1]{fontenc}			%% encodage des fontes
-\RequirePackage{lmodern}					%% polices latines
+%\RequirePackage{lmodern}					%% polices latines (désactivés)
+\RequirePackage{fourier}					%% polices Adobe Utopia (activés)
 \RequirePackage[english,main=french]{babel}	%% typographie (français par défaut)
 \RequirePackage[babel]{csquotes}			%% guillemets typographiques
 \MakeAutoQuote{«}{»}						%% espacement automatique des guillemets
@@ -52,7 +53,6 @@
 \RequirePackage{tabularx}					%% tableaux
 \RequirePackage{multirow}					%% fusion des cellules dans les tableaux 
 \RequirePackage{makecell}					%% sauts des lignes dans les cellules	
-\RequirePackage{fourier}					%% fusion des lignes dans les tableaux 
 \RequirePackage{array}						%% amélioration des tableaux
 \RequirePackage{booktabs}					%% tables formelles
 \RequirePackage{tikz}						%% figures en code natif
@@ -195,8 +195,7 @@
 %\renewcommand{\thefootnote}{\alph{footnote}}		%% format de numérotation des notes de bas de page (décommenter)
 %\let\footnote=\endnote								%% passe les footnote en endnote (décommenter)
 
-%\renewcommand*{\sfdefault}{phv} % sélectionne la fonte Helvetica pour tout le sans sérif (décommenter)
-%\renewcommand*{\rmdefault}{bch} % sélectionne la fonte Charter pour tout le sérif sauf les mathématiques (décommenter)
+\renewcommand*{\sfdefault}{phv} % sélectionne la fonte Helvetica pour tout le sans sérif (titrage)
 
 %\renewcommand{\familydefault}{\sfdefault} % passe à l'utilisation du sans-serif pour tout sauf les mathématiques (décommenter : vivement déconseillé)
 

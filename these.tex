@@ -15,17 +15,19 @@
 
 
 	\chapter*{Résumé}					%% résumé
-        \addcontentsline{toc}{chapter}{Résumé}
+    \addcontentsline{toc}{chapter}{Résumé}
 	\input{tex/resume}
 
 
 	\chapter*{Abstract}					%% abstract
-        \addcontentsline{toc}{chapter}{Abstract}
+    \addcontentsline{toc}{chapter}{Abstract}
+	\selectlanguage{english}
 	\input{tex/abstract}
+	\selectlanguage{french}
 
 
 	\chapter*{Remerciements}			%% remerciements
-        \addcontentsline{toc}{chapter}{Remerciements}
+    \addcontentsline{toc}{chapter}{Remerciements}
 	\input{tex/remercie}
 
 
@@ -53,8 +55,8 @@
 	\ohead{\leftmark\ifstr{\rightmark}{\leftmark}{}{ -- \rightmark}}	%% place le chapître et la partie en en-tête
 
 	\chapter*{Introduction}
-	\input{tex/intro}
 	\addcontentsline{toc}{chapter}{Introduction}
+	\input{tex/intro}
 
 	\chapter{ Généralités}
 	\input{tex/chap1}
@@ -66,8 +68,8 @@
 	\input{tex/chap3}
 
 	\chapter*{Conclusion}
-	\input{tex/conc}
 	\addcontentsline{toc}{chapter}{Conclusion}
+	\input{tex/conc}
 
 	\appendix
 

@@ -199,5 +199,5 @@
 
 %\renewcommand{\familydefault}{\sfdefault} % passe à l'utilisation du sans-serif pour tout sauf les mathématiques (décommenter : vivement déconseillé)
 
-\renewcommand{\ifstr}{\Ifstr}               %% supprime les 'warnings' des packages non mis à jour
-\renewcommand{\iftocfeature}{\Iftocfeature} %% selon les recommendations de The LaTeX Project Team
+%\renewcommand{\ifstr}{\Ifstr}               %% supprime les 'warnings' des packages non mis à jour
+%\renewcommand{\iftocfeature}{\Iftocfeature} %% selon les recommendations de The LaTeX Project Team (TeX Live 2020)

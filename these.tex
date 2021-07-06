@@ -7,12 +7,18 @@
 	\pdfbookmark[0]{Page de titre}{titre}
 	\thispagestyle{empty}
 	\input{tex/titre.tex}
-										%% licence
+										%% affidavit et licence
 	\newpage
 	\pdfbookmark[0]{Affidavit}{affidavit}
+    \addcontentsline{toc}{chapter}{Affidavit}
 	\thispagestyle{empty}
-	\input{tex/licence}
+	\input{tex/affidavit}
 
+	\newpage
+	\pdfbookmark[0]{Liste de publications et participation aux conférences}{publications}
+    \addcontentsline{toc}{chapter}{Liste de publications et participation aux conférences}
+	\thispagestyle{empty}
+	\input{tex/publications}
 
 	\chapter*{Résumé}					%% résumé
     \addcontentsline{toc}{chapter}{Résumé}

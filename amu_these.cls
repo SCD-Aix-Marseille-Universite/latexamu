@@ -159,7 +159,7 @@
 	{glossaries}							%% glossaires (charger le package glossaries après le package hyperref)
 \newglossary[nlg]{notation}{not}{ntn}{Nomenclature} % Création d'un type de glossaire 'notation'
 \makeglossaries								%% génère les glossaires
-\loadglsentries{tex/gloss}					%% fichiers sources glossaires
+\loadglsentries{tex_open/gloss}					%% fichiers sources glossaires
 
 %%% commandes personnelles (macros)
 \newcommand{\langue}{\emph}					%% mots en langues étrangères en italique

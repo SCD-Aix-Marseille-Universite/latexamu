@@ -2,57 +2,33 @@
 
 \begin{document}
 
-										%% page de titre
-	\chead{}
-	\pdfbookmark[0]{Page de titre}{titre}
-	\thispagestyle{empty}
-	\input{tex/titre.tex}
-										%% affidavit et licence
-	\newpage
-	%\pdfbookmark[0]{Affidavit}{affidavit}
-	\chapter*{Affidavit}					%% résumé
-    \addcontentsline{toc}{chapter}{Affidavit}
-	\thispagestyle{empty}
-	\input{tex/affidavit}
+										
+	\input{tex_open/titre.tex}				%% page de titre
+										
+	\input{tex_open/affidavit}				%% affidavit et licence
 
-	\newpage
-	%\pdfbookmark[0]{Liste de publications et participation aux conférences}{publications}
-	\chapter*{Liste de publications et participation aux conférences}
-    \addcontentsline{toc}{chapter}{Liste de publications et participation aux conférences}
-	\input{tex/publications}
+	\input{tex_open/publications}			%% liste de publications et participation aux conférences
 
-	\chapter*{Résumé}					%% résumé
-    \addcontentsline{toc}{chapter}{Résumé}
-	\input{tex/resume}
+	\input{tex_open/resume}					%% résumé
 
+	\input{tex_open/abstract}				%% abstract
 
-	\chapter*{Abstract}					%% abstract
-    \addcontentsline{toc}{chapter}{Abstract}
-	\selectlanguage{english}
-	\input{tex/abstract}
-	\selectlanguage{french}
-
-
-	\chapter*{Remerciements}			%% remerciements
-    \addcontentsline{toc}{chapter}{Remerciements}
-	\input{tex/remercie}
-
-
+	\input{tex_open/remercie}				%% remerciements
 
     \microtypesetup{protrusion=false}	%% désactive la protrusion (TOC LOFT GLS)
 	\tableofcontents					%% TOC
 	\listoffigures						%% LOF
 	\listoftables						%% LOT
-	\printglossary[						%% Acronymes
+	\printglossary[						%% acronymes
 		type=\acronymtype,
 		title={Liste des acronymes},
 		toctitle={Liste des acronymes}
 		]
-	\printglossary[						%% Glossaire
+	\printglossary[						%% glossaire
 		title={Glossaire},
 		toctitle={Glossaire}
 		]
-	\printglossary[						%% Nomenclature
+	\printglossary[						%% nomenclature
 		type=notation,
 		title={Nomenclature},
 		toctitle={Nomenclature}
@@ -61,44 +37,27 @@
 
 	\ohead{\leftmark\Ifstr{\rightmark}{\leftmark}{}{ -- \rightmark}}	%% place le chapître et la partie en en-tête
 
-	\chapter*{Introduction}
-	\addcontentsline{toc}{chapter}{Introduction}
-	\input{tex/intro}
+	\input{tex_body/intro}
 
-	\chapter{ Généralités}
-	\input{tex/chap1}
+	\input{tex_body/chap1}
 
-	\chapter{ Méthodologie de la recherche}
-	\input{tex/chap2}
+	\input{tex_body/chap2}
 
-	\chapter{ Résultats}
-	\input{tex/chap3}
+	\input{tex_body/chap3}
 
-	\chapter*{Conclusion}
-	\addcontentsline{toc}{chapter}{Conclusion}
-	\input{tex/conc}
+	\input{tex_body/conc}
 
 	\appendix
 
 	\newpage
-	\printbibliography[					%% bibliographie
-	heading=bibintoc
-	]	
+	\printbibliography[heading=bibintoc]%% bibliographie
+	
 	\newpage
 	\printindex							%% index
+	
 	\newpage
 	\printendnotes						%% notes
 
-%% annexes
-	\setcounter{chapter}{0}
-	\renewcommand{\thesection}{\Alph{section}}
-	
-	\chapter*{ANNEXES}
-	\newpage
-	\addcontentsline{toc}{chapter}{ANNEXES}
-	
-	\input{tex/annexe1}
-	\newpage
-	\input{tex/annexe2}
+	\input{tex_append/annexes}			%% annexes
 
 \end{document}

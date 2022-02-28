@@ -81,7 +81,6 @@
 	backref									%% hyperlien retour des notes
 	}
 \RequirePackage{imakeidx}					%% index
-\RequirePackage[titles,subfigure]{tocloft}	%% fonctions pour TOC LOF LOT
 \RequirePackage{etoc}						%% fonctions pour TOC locale (préférable à minitoc avec KOMA-Script)
 \setuptoc{toc}{totoc}						%% ajoute la TOC à la TOC
 \newcommand{\chaptertoc}[1][Sommaire]{%		%% définit une commande pour la TOC locale (Sommaire)
@@ -198,6 +197,3 @@
 \renewcommand*{\sfdefault}{phv} % sélectionne la fonte Helvetica pour tout le sans sérif (titrage)
 
 %\renewcommand{\familydefault}{\sfdefault} % passe à l'utilisation du sans-serif pour tout sauf les mathématiques (décommenter : vivement déconseillé)
-
-%\renewcommand{\ifstr}{\Ifstr}               %% supprime les 'warnings' des packages non mis à jour
-%\renewcommand{\iftocfeature}{\Iftocfeature} %% selon les recommendations de The LaTeX Project Team (TeX Live 2020)

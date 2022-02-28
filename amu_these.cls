@@ -95,7 +95,7 @@
 \addbibresource{biblio.bib}					%% fichiers sources bibliographiques
 \makeindex[									%% génère l'index
 	program=makeindex,						%% compilateur
-	options=-s these,						%% paramètres
+	options=-s alpha.ist,					%% paramètre en-têtes alphabétiques
 	columns=1,								%% nombre de colonnes
 	intoc									%% index dans la TOC
 	]

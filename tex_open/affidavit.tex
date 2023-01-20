@@ -2,6 +2,7 @@
 \chapter*{Affidavit}					
 \addcontentsline{toc}{chapter}{Affidavit}
 \thispagestyle{empty}
+
 \iftrue % Déclaration sur l'honneur pour une thèse en français (inverser les \if pour une thèse en anglais)
     Je soussigné, [Prénom Nom], %% Prénom et Nom de l'auteur %%
     déclare par la présente que le travail présenté dans ce manuscrit est mon propre travail, réalisé sous la direction scientifique de [Prénom Nom], % Prénom et Nom du directeur de thèse et s’il y a lieu du co-directeur de thèse
@@ -12,6 +13,15 @@
     Fait à [ville] le [date]
     
     \begin{flushright}\includegraphics[width=120px,height=40px]{example-image-a}\end{flushright}% signature
+
+    ~\vfill
+    \begin{center}
+        \begin{minipage}[c]{0.25\linewidth}
+            \includegraphics[height=35px]{by-nc-nd-eu}
+        \end{minipage}\hfill
+    \end{center}
+
+    Cette \oe{}uvre est mise à disposition selon les termes de la \href{https://creativecommons.org/licenses/by-nc-nd/4.0/deed.fr}{Licence Creative Commons Attribution - Pas d’Utilisation Commerciale - Pas de Modification 4.0 International}. % consultez les conditions de la licence cc by-nc-nd, vous pouvez appliquer une licence moins restrictive, cc by-nc-sa par exemple
 \fi
 
 \iffalse % Affidavit of Honour for english thesis (invert the \if for an English thesis)
@@ -23,14 +33,15 @@
     
     [Place] [date]
     
-    \begin{flushright}\includegraphics[width=120px,height=40px]{example-image-b}\includegraphics[width=40,height=15px]{example-image-a}\end{flushright} % signature
+    \begin{flushright}\includegraphics[width=120px,height=40px]{example-image-a}\end{flushright}% signature
+
+    ~\vfill
+    \begin{center}
+        \begin{minipage}[c]{0.25\linewidth}
+            \includegraphics[height=35px]{by-nc-nd-eu}
+        \end{minipage}\hfill
+    \end{center}
+
+    This work is licensed under \href{https://creativecommons.org/licenses/by-nc-nd/4.0/deed.en}{Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International Public License}
 \fi
 
-~\vfill
-\begin{center}
-	\begin{minipage}[c]{0.25\linewidth}
-		\includegraphics[height=35px]{by-nc-nd-eu}
-	\end{minipage}\hfill
-\end{center}
-
-Cette \oe{}uvre est mise à disposition selon les termes de la \href{https://creativecommons.org/licenses/by-nc-nd/4.0/deed.fr}{Licence Creative Commons Attribution - Pas d’Utilisation Commerciale - Pas de Modification 4.0 International}. % consultez les conditions de la licence cc by-nc-nd, vous pouvez appliquer une licence moins restrictive, cc by-nc-sa par exemple

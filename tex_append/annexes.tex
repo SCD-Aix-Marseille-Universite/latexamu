@@ -1,6 +1,11 @@
 \setcounter{chapter}{0}
 \renewcommand{\thesection}{\Alph{section}}
 
+% Fix numbering of eq/table/fig in appendices
+\numberwithin{equation}{section} % Restart number at each section
+\numberwithin{figure}{section}
+\numberwithin{table}{section}
+
 \chapter*{ANNEXES}
 \newpage
 \addcontentsline{toc}{chapter}{ANNEXES}

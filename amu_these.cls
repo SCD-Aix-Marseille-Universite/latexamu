@@ -64,10 +64,14 @@
 %%% appareil de référence (sauf glossaires)
 \PassOptionsToPackage{						%% options biblatex
 	backend=biber,							%% compilateur par défaut pour biblatex
-	maxnames=3,								%% nombre max. de noms auteurs
-	minnames=3,								%% nombre min. de noms auteurs
+	maxnames=3,								%% nombre max. de noms auteurs dans la bibliographie
+	minnames=3,								%% nombre min. de noms auteurs dans la bibliographie
+	maxcitenames=1,							%% nombre max. de noms auteurs dans les citations
+	mincitenames=1,							%% nombre min. de noms auteurs dans les citations
 	sorting=nyt,							%% trier par nom, année, titre
-	citestyle=authoryear,					%% style de citation auteur-année
+	pagetracker,							%% pour l'utilisation d'ibidem
+	ibidtracker=constrict,					%% pour l'utilisation d'ibidem
+	citestyle=authoryear-ibid,				%% style de citation auteur-année
 	bibstyle=alphabetic,					%% style de bibliographie alphabétique
 %	bibstyle=iso-authoryear,				%% style de bibliographie ISO 690
 	backref=true							%% liens retour des références (cf. p.)
@@ -88,6 +92,7 @@
 	\etocsettocstyle{\addsec*{#1}}{}%
 	\localtableofcontents%
 }
+\RequirePackage{nameref}					%% références croisées avec nommage littérale
 
 \setcounter{secnumdepth}{3}					%% profondeur des sections numérotées
 \setcounter{tocdepth}{2}					%% profondeur des sections dans la table des matières

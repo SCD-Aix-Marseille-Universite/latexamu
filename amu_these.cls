@@ -1,8 +1,8 @@
 %
 % Aix-Marseille Université <@univ-amu.fr>
-% Version 0.9 released 04/06/2020
+% Version 1.0 released 02/06/2024
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{amu_these}[2020/06/04 Classe personnelle, V0.9]
+\ProvidesClass{amu_these}[2024/06/02 Classe personnelle, 1.0]
 
 %%% classe de base (KOMA-Script)
 \LoadClass{scrreprt}						%% classe report KOMA-Script
@@ -78,6 +78,8 @@
 	}
 	{biblatex}
 \RequirePackage{biblatex}					%% gestion de la bibliographie avec biblatex
+\addbibresource{biblio.bib}					%% fichiers sources bibliographiques
+
 \RequirePackage{enotez}						%% notes de fin
 \setenotez{
 	list-name=Notes,						%% titre des notes
@@ -94,10 +96,6 @@
 }
 \RequirePackage{nameref}					%% références croisées avec nommage littérale
 
-\setcounter{secnumdepth}{3}					%% profondeur des sections numérotées
-\setcounter{tocdepth}{2}					%% profondeur des sections dans la table des matières
-
-\addbibresource{biblio.bib}					%% fichiers sources bibliographiques
 \makeindex[									%% génère l'index
 	program=makeindex,						%% compilateur
 	options=-s alpha.ist,					%% paramètre en-têtes alphabétiques
@@ -105,7 +103,7 @@
 	intoc									%% index dans la TOC
 	]
 
-%%% mathématiques, physique, chimie (à adapter)
+%%% mathématiques, physique, chimie
 \RequirePackage{amsmath}					%% formules mathématiques
 \RequirePackage{amssymb}					%% symboles mathématiques
 \RequirePackage{amsfonts}					%% polices mathématiques
@@ -114,12 +112,17 @@
 \RequirePackage{xparse}						%% macros avancées
 \RequirePackage{nicefrac}					%% fractions en ligne (voir aussi xfrac)
 \RequirePackage{siunitx}					%% unités du système international
+\AtBeginDocument{\RenewCommandCopy\qty\SI}	%% uitilisation de siunitx et physics
+\ExplSyntaxOn
+\msg_redirect_name:nnn { siunitx } { physics-pkg } { none }
+\ExplSyntaxOff
 \sisetup{									%% options pour les unités
 	list-final-separator = { \translate{and} },	
 	list-pair-separator  = { \translate{and} },
 	output-decimal-marker = {,},
 	exponent-product = {\cdot},
-	separate-uncertainty = true
+	separate-uncertainty = true,
+	product-units=single
 	}
 \PassOptionsToPackage{version=4}{mhchem}
 \RequirePackage{mhchem}						%% chimie
@@ -128,7 +131,7 @@
 
 %%% PDF
 \RequirePackage{pdfpages}					%% insertion de pdf
-\RequirePackage{hyperref}					%% pdf interactifs (charger le package hyperref en dernier)
+\RequirePackage{hyperref}					%% pdf interactifs (package hyperref appelé en dernier)
 
 \pdfminorversion=5							%% PDF en version 1.5
 \pdfobjcompresslevel 0						%% compression des objets
@@ -139,7 +142,7 @@
 	%pagebackref=true,						%% dans la bibliographie (par défaut)
 	%hyperindex=true,						%% dans l'index (par défaut)
 	%bookmarks=true,						%% signets Acrobat (par défaut)
-	breaklinks=true,						%% retour à la ligne (si lien trop long)
+	breaklinks=true,						%% retour à la ligne (liens trop longs)
 	colorlinks=true,						%% colorise liens
 	urlcolor=blue,							%% couleur hyperliens
 	citecolor=blue,							%% couleur liens bibliographie
@@ -161,10 +164,10 @@
 	toc,									%% affichage dans la TOC
 	style=altlist							%% affichage des entrées
 	]
-	{glossaries}							%% glossaires (charger le package glossaries après le package hyperref)
+	{glossaries}							%% glossaires (le package glossaries est chargé après le package hyperref)
 \newglossary[nlg]{notation}{not}{ntn}{Nomenclature} % Création d'un type de glossaire 'notation'
 \makeglossaries								%% génère les glossaires
-\loadglsentries{tex_open/gloss}					%% fichiers sources glossaires
+\loadglsentries{tex_open/gloss}				%% fichiers sources glossaires
 
 %%% commandes personnelles (macros)
 \newcommand{\langue}{\emph}					%% mots en langues étrangères en italique : \langue{framework}
@@ -175,31 +178,16 @@
 \newcommand{\emiss}[2][]{\ensuremath{\varepsilon_{#2}^{#1}}\xspace}
 
 %%% commandes pour la page de titre
-\definecolor{blueamu}{RGB}{0, 101, 189}
-\definecolor{cyanamu}{RGB}{61, 183, 228}
-
-\newcommand{\dhorline}[3][0]{%
-    \tikz[baseline=-2pt]{\path[decoration={markings, 
-      mark=between positions 0 and 1 step 2*#3
-      with {\node[color=blueamu, fill, circle, minimum width=#3, inner sep=0pt, anchor=south west] {};}},postaction={decorate}]  (0,#1) -- ++(#2,0);}}
-\newcommand{\dvertline}[3][0]{%
-    \tikz[baseline=2em]{\path[decoration={markings,
-      mark=between positions 0 and 1 step 2*#2
-      with {\node[color=black!50, fill, circle, minimum width=#2, inner sep=0pt, anchor=south west] {};}},postaction={decorate}] (0, #1) -- ++(0,#3);}}
-
-\newcommand\titel[1]{{\usefont{T1}{tit}{el}{n} #1 }}
-\newcommand\titl[1]{{\usefont{T1}{tit}{l}{n} #1 }}
-\newcommand\titm[1]{{\usefont{T1}{tit}{m}{n} #1 }}
-\newcommand\titsb[1]{{\usefont{T1}{tit}{sb}{n} #1 }}
-\newcommand\titb[1]{{\usefont{T1}{tit}{b}{n} #1 }}
+\definecolor{blueamu}{RGB}{30,100,222}
+\definecolor{yellowamu}{RGB}{255,255,133}
 \makeatletter\newcommand\HUGE{\@setfontsize\Huge{28}{0}}\makeatother
 
-%%% reconfigurations personnelles
+%%% reconfigurations personnalisées
+\setcounter{secnumdepth}{3}					%% profondeur des sections numérotées
+\setcounter{tocdepth}{2}					%% profondeur des sections dans la table des matières
 \addto\captionsfrench{\def\tablename{Tableau}}		%% renomme Table en Tableau dans les légendes
 
-%\renewcommand{\thefootnote}{\alph{footnote}}		%% format de numérotation des notes de bas de page (décommenter)
-%\let\footnote=\endnote								%% passe les footnote en endnote (décommenter)
+%\renewcommand{\thefootnote}{\alph{footnote}}		%% format de numérotation des notes de bas de page
+%\let\footnote=\endnote								%% passe les footnote en endnote
 
-\renewcommand*{\sfdefault}{phv} % sélectionne la fonte Helvetica pour tout le sans sérif (titrage)
-
-%\renewcommand{\familydefault}{\sfdefault} % passe à l'utilisation du sans-serif pour tout sauf les mathématiques (décommenter : vivement déconseillé)
+\renewcommand*{\sfdefault}{phv} % sélectionne la fonte Helvetica pour le titrage sans sérif

@@ -35,7 +35,10 @@
 	]{scrlayer-scrpage}						%% en-tête/pied de page personnalisés (KOMA-Script)
 \RequirePackage{textcomp}					%% symboles complémentaires
 \RequirePackage{hyphenat}					%% césure explicite
-\RequirePackage{microtype}					%% microtypographie
+\RequirePackage[
+	babel=true,
+	kerning=true
+	]{microtype}							%% microtypographie
 
 \RequirePackage[bottom=10em]{geometry}		%% réduit le bas de page pour pouvoir numéroter les pdf insérés (réduire plus si nécessaire)
 \RequirePackage{setspace}					%% modification de l'interligne
@@ -150,7 +153,7 @@
 	anchorcolor=blue,						%% couleur liens ancres
 	bookmarksopen=false,					%% signets repliés par défaut
 	linktocpage=false,						%% lien numéro de page dans TOC
-%% métadonnées :							%% ATTENTION à compléter
+%% métadonnées :							%% ATTENTION > à compléter
 	pdftitle={Titre},
 	pdfauthor={Prénom NOM},
 	pdfsubject={Résumé},

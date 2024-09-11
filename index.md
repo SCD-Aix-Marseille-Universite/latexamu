@@ -1,7 +1,7 @@
 ### Modèle de mise en page.
 Ce modèle de mise en page pour les thèses de doctorat soutenues à Aix Marseille Université propose un ensemble de fichiers LaTeX commentés, prêt à être compilés dont une classe LaTeX [.cls].
 
-La page de titre a été validée par le Collège Doctoral Aix-Marseille Université. Les pages liminaires, page de titre, affidavit, publications et participation aux conférences, résumés, doivent être conformes aux préconisations d'AMU.
+La page de titre est validée par le Collège doctoral Aix-Marseille Université. Les pages liminaires, page de titre, affidavit, publications et participation aux conférences, résumés, doivent être conformes aux préconisations d'AMU.
 
 ### Distribution LaTeX
 

@@ -4,7 +4,7 @@
 @import "{{ site.theme }}";
 
 body {
-    font-family: "Titillium Web", sans-serif;
+    font-family: "Roboto", sans-serif;
 }
 
 a {
@@ -36,10 +36,10 @@ p {
 }
 
 .main-content h1, .main-content h2, .main-content h3, .main-content h4, .main-content h5, .main-content h6 {
-    font-family: "Titillium Web", sans-serif;
+    font-family: "Roboto", sans-serif;
     color: #00558a;
 }
 
 .page-header {
-    background-image: linear-gradient(120deg, #BB3430, #C15F9C) !important;
+    background-color: #d0224a !important;
 }

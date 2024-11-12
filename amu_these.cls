@@ -137,8 +137,8 @@
 \RequirePackage{hyperref}					%% pdf interactifs (package hyperref appelé en dernier)
 
 \pdfminorversion=5							%% PDF en version 1.5
-\pdfobjcompresslevel 0						%% compression des objets
-\pdfcompresslevel 0							%% compression du PDF
+\pdfobjcompresslevel 0							%% compression des objets (passer à 3 pour alléger le fichier)
+\pdfcompresslevel 0							%% compression du PDF (passer à 9 pour alléger le fichier)
 
 \hypersetup{
 	%backref=true,							%% ajout de liens (par défaut)

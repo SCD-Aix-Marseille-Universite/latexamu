@@ -2,7 +2,7 @@
 % Aix-Marseille Université <@univ-amu.fr>
 % Version 1.0 released 02/06/2024
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{amu_these}[2024/06/02 Classe personnelle, 1.0]
+\ProvidesClass{amu_these}[2025/04/01 Classe personnelle, 1.1]
 
 %%% classe de base (KOMA-Script)
 \LoadClass{scrreprt}						%% classe report KOMA-Script
@@ -20,8 +20,7 @@
 
 %%% extensions minimales
 \RequirePackage[utf8]{inputenc}				%% encodage du texte
-\RequirePackage[TS1,T1]{fontenc}			%% encodage des fontes
-%\RequirePackage{lmodern}					%% polices latines (désactivés)
+\RequirePackage[T1]{fontenc}				%% encodage des fontes
 \RequirePackage{fourier}					%% polices Adobe Utopia (activés)
 \RequirePackage[english,main=french]{babel}	%% typographie (français par défaut)
 \RequirePackage[babel]{csquotes}			%% guillemets typographiques
@@ -31,16 +30,13 @@
 \RequirePackage{scrhack}					%% macros personnalisées (KOMA-Script)
 \RequirePackage[
 	automark,								%% rappel du titre de chapître en en-tête
-	autooneside=false						%% nécessaire pour le rappel du chapître et de la partie en en-tête
+	autooneside=false						%% pour le rappel du chapître et de la partie en en-tête
 	]{scrlayer-scrpage}						%% en-tête/pied de page personnalisés (KOMA-Script)
 \RequirePackage{textcomp}					%% symboles complémentaires
 \RequirePackage{hyphenat}					%% césure explicite
-\RequirePackage[
-	babel=true,
-	kerning=true
-	]{microtype}							%% microtypographie
+\RequirePackage[babel=true]{microtype}		%% microtypographie
 
-\RequirePackage[bottom=10em]{geometry}		%% réduit le bas de page pour pouvoir numéroter les pdf insérés (réduire plus si nécessaire)
+\RequirePackage[bottom=10em]{geometry}		%% réduit le bas de page pour numéroter les pdf insérés
 \RequirePackage{setspace}					%% modification de l'interligne
 
 \pagestyle{scrheadings}						%% style de page
@@ -48,7 +44,7 @@
 %\setkomafont{descriptionlabel}{\bfseries}	%% entrée des glossaires en police sérif (décommenter)
 
 %%% tableaux et figures
-\RequirePackage{float}						%% définit les objets flottants tels que les figures et tableaux
+\RequirePackage{float}						%% définit les objets flottants (figures et tableaux)
 \RequirePackage{graphicx}					%% graphiques et figures
 \RequirePackage[export]{adjustbox}			%% permet de définir une taille minimale ou maximale
 \RequirePackage{subfig}						%% figures multiples
@@ -90,7 +86,7 @@
 	backref									%% hyperlien retour des notes
 	}
 \RequirePackage{imakeidx}					%% index
-\RequirePackage{etoc}						%% fonctions pour TOC locale (préférable à minitoc avec KOMA-Script)
+\RequirePackage{etoc}						%% fonctions pour TOC locale
 \setuptoc{toc}{totoc}						%% ajoute la TOC à la TOC
 \newcommand{\chaptertoc}[1][Sommaire]{%		%% définit une commande pour la TOC locale (Sommaire)
 	\etocsetnexttocdepth{3}%				%% profondeur de la TOC locale
@@ -188,6 +184,7 @@
 %%% reconfigurations personnalisées
 \setcounter{secnumdepth}{3}					%% profondeur des sections numérotées
 \setcounter{tocdepth}{2}					%% profondeur des sections dans la table des matières
+\counterwithout{equation}{chapter}			%% numérotation continue des formules
 \addto\captionsfrench{\def\tablename{Tableau}}		%% renomme Table en Tableau dans les légendes
 
 %\renewcommand{\thefootnote}{\alph{footnote}}		%% format de numérotation des notes de bas de page
